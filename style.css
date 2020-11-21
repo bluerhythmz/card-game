@@ -187,3 +187,7 @@ h1 {
 #mai-btn:active {
     padding: 19px 30px;
 }
+
+.hide {
+    display: none;
+}

@@ -202,20 +202,25 @@ const duel = (duelist1, duelist2) => {
 
 startYugi.addEventListener('click', () => {
     duel(yugi, characterArray[Math.floor(Math.random() * 5)])
+    buttonContainer.classList.add('hide')
 })
 
 startKaiba.addEventListener('click', () => {
     duel(kaiba, characterArray[Math.floor(Math.random() * 5)])
+    buttonContainer.classList.add('hide')
 })
 
 startMarik.addEventListener('click', () => {
     duel(marik, characterArray[Math.floor(Math.random() * 5)])
+    buttonContainer.classList.add('hide')
 })
 
 startJoey.addEventListener('click', () => {
     duel(joey, characterArray[Math.floor(Math.random() * 5)])
+    buttonContainer.classList.add('hide')
 })
 
 startMai.addEventListener('click', () => {
     duel(mai, characterArray[Math.floor(Math.random() * 5)])
+    buttonContainer.classList.add('hide')
 })

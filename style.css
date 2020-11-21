@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Goldman', cursive;
+}
+
+body {
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(yugi.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+#logo {
+    height: 20vh;
+}
+
+h1 {
+    color: white;
+    font-size: 100px;
+}
+
+#result1 {
+    width: 800px;
+    color: rgb(0, 228, 197);
+    font-size: 50px;
+    word-wrap: normal;
+}
+
+#result2 {
+    width: 800px;
+    color: rgb(72, 52, 253);
+    font-size: 50px;
+    word-wrap: normal;
+}
+
+#battleText {
+    width: 800px;
+    color: rgb(155, 0, 0);
+    font-size: 50px;
+    word-wrap: normal;
+}
+
+#pointsTally1 {
+    width: 500px;
+    color: white;
+    font-size: 50px;
+    word-wrap: normal;
+}
+
+#pointsTally2 {
+    width: 500px;
+    color: white;
+    font-size: 50px;
+    word-wrap: normal;
+}
+
+#yugi-btn {
+    padding: 20px 30px;
+    font-size: 30px;
+    border-radius: 1000px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
+    border: 5px solid black;
+    box-shadow: 0.5px 0.5px 10px goldenrod;
+    color: goldenrod;
+    text-shadow: 5px 1px 1px rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+#yugi-btn:focus {
+    outline: none;
+}
+
+#yugi-btn:hover {
+    color: gold;
+    box-shadow: 1px 1px 20px gold;
+}
+
+#yugi-btn:active {
+    padding: 19px 30px;
+}
+
+#kaiba-btn {
+    padding: 20px 30px;
+    font-size: 30px;
+    border-radius: 1000px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
+    border: 5px solid black;
+    box-shadow: 0.5px 0.5px 10px goldenrod;
+    color: goldenrod;
+    text-shadow: 5px 1px 1px rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+#kaiba-btn:focus {
+    outline: none;
+}
+
+#kaiba-btn:hover {
+    color: gold;
+    box-shadow: 1px 1px 20px gold;
+}
+
+#kaiba-btn:active {
+    padding: 19px 30px;
+}
+
+#marik-btn {
+    padding: 20px 30px;
+    font-size: 30px;
+    border-radius: 1000px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
+    border: 5px solid black;
+    box-shadow: 0.5px 0.5px 10px goldenrod;
+    color: goldenrod;
+    text-shadow: 5px 1px 1px rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+#marik-btn:focus {
+    outline: none;
+}
+
+#marik-btn:hover {
+    color: gold;
+    box-shadow: 1px 1px 20px gold;
+}
+
+#marik-btn:active {
+    padding: 19px 30px;
+}
+
+#joey-btn {
+    padding: 20px 30px;
+    font-size: 30px;
+    border-radius: 1000px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
+    border: 5px solid black;
+    box-shadow: 0.5px 0.5px 10px goldenrod;
+    color: goldenrod;
+    text-shadow: 5px 1px 1px rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+#joey-btn:focus {
+    outline: none;
+}
+
+#joey-btn:hover {
+    color: gold;
+    box-shadow: 1px 1px 20px gold;
+}
+
+#joey-btn:active {
+    padding: 19px 30px;
+}
+
+#mai-btn {
+    padding: 20px 30px;
+    font-size: 30px;
+    border-radius: 1000px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
+    border: 5px solid black;
+    box-shadow: 0.5px 0.5px 10px goldenrod;
+    color: goldenrod;
+    text-shadow: 5px 1px 1px rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+#mai-btn:focus {
+    outline: none;
+}
+
+#mai-btn:hover {
+    color: gold;
+    box-shadow: 1px 1px 20px gold;
+}
+
+#mai-btn:active {
+    padding: 19px 30px;
+}

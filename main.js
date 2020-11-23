@@ -8,6 +8,8 @@ let startKaiba = document.getElementById('kaiba-btn')
 let startMarik = document.getElementById('marik-btn')
 let startJoey = document.getElementById('joey-btn')
 let startMai = document.getElementById('mai-btn')
+let buttonContainer = document.querySelector('.button-container')
+let pointsContainer = document.querySelector('.points-container')
 
 let yugiCards = [{
     cardName: "Dark Magician",
@@ -203,24 +205,29 @@ const duel = (duelist1, duelist2) => {
 startYugi.addEventListener('click', () => {
     duel(yugi, characterArray[Math.floor(Math.random() * 5)])
     buttonContainer.classList.add('hide')
+    pointsContainer.style.display ="flex"
 })
 
 startKaiba.addEventListener('click', () => {
     duel(kaiba, characterArray[Math.floor(Math.random() * 5)])
     buttonContainer.classList.add('hide')
+    pointsContainer.style.display ="flex"
 })
 
 startMarik.addEventListener('click', () => {
     duel(marik, characterArray[Math.floor(Math.random() * 5)])
     buttonContainer.classList.add('hide')
+    pointsContainer.style.display ="flex"
 })
 
 startJoey.addEventListener('click', () => {
     duel(joey, characterArray[Math.floor(Math.random() * 5)])
     buttonContainer.classList.add('hide')
+    pointsContainer.style.display ="flex"
 })
 
 startMai.addEventListener('click', () => {
     duel(mai, characterArray[Math.floor(Math.random() * 5)])
     buttonContainer.classList.add('hide')
+    pointsContainer.style.display ="flex"
 })

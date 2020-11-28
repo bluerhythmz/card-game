@@ -19,6 +19,15 @@ body {
     flex-direction: column;
 }
 
+.game {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
 #logo {
     height: 20vh;
 }
@@ -212,4 +221,61 @@ h1 {
 
 .hide {
     display: none;
+}
+
+
+
+@media all and (max-width: 480px) {
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
+    .game {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
+    .button-container {
+        width: 70%;
+        height: 50%;
+    }
+    #yugi-btn,#kaiba-btn,#marik-btn,#joey-btn,#mai-btn {
+        padding: 15px 15px;
+        font-size: 20px;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    
+    #logo {
+        height: 10vh;
+    }
+    #result1 {
+        font-size: 30px;
+        width: 300px;
+    }
+    #result2 {
+        font-size: 30px;
+        width: 300px;
+    }
+    .points-container {
+        height: 10vh;
+        width: 350px;
+    }
+    #pointsTally1 {
+        font-size: 16px;
+        width: 50%;
+        padding-left: 30px;
+    }
+    #pointsTally2 {
+        font-size: 16px;
+        width: 50%;
+        padding-left: 30px;
+    }
+    #battleText {
+        width: 100px;
+        font-size: 30px;
+    }
 }

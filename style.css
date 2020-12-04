@@ -6,13 +6,18 @@
     font-family: 'Goldman', cursive;
 }
 
-body {
+html {
     background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(yugi.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    width: 100vw;
+    background-attachment: fixed;
+}
+
+body {
+    
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -33,8 +38,41 @@ body {
 }
 
 h1 {
-    color: white;
+    color: rgb(185, 99, 0);
     font-size: 100px;
+    position: relative;
+    
+}
+
+.wavy {
+    position: relative;
+    -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0,0,0,0.2));
+    
+}
+
+.wavy span {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    animation: animate 2s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+    color: rgb(185, 99, 0);
+}
+
+
+
+@keyframes animate {
+    0% {
+        transform: translateY(0px) rotate(90deg);
+    }
+    20% {
+        transform: translateY(-20px);
+    }
+    40%,100% {
+        transform: translateY(0px);
+    }
 }
 
 #result1 {
@@ -225,11 +263,25 @@ h1 {
 
 
 
-@media all and (max-width: 480px) {
-    body {
-        height: 100vh;
-        width: 100vw;
+@media all and (max-width: 480px) and (orientation: portrait) {
+    html {
+        background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(yugi.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100%;
     }
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    .wavy span {
+        font-size: 1.6rem;
+    }
+    
+
     .game {
         height: 100vh;
         width: 100vw;
@@ -277,5 +329,47 @@ h1 {
     #battleText {
         width: 100px;
         font-size: 30px;
+    }
+}
+
+@media all and (max-width: 740px) and (orientation: landscape) {
+    .wavy span {
+        font-size: 1.6rem;
+    }
+    #result1 {
+        font-size: 26px;
+        width: 600px;
+    }
+    #result2 {
+        font-size: 26px;
+        width: 600px;
+    }
+    .points-container {
+        height: 20vh;
+        width: 350px;
+    }
+    #pointsTally1 {
+        font-size: 18px;
+        width: 50%;
+        padding-left: 20px;
+    }
+    #pointsTally2 {
+        font-size: 18px;
+        width: 50%;
+        padding-left: 20px;
+    }
+    #battleText {
+        width: 100px;
+        font-size: 24px;
+    }
+    .button-container {
+        width: 100%;
+        height: 30%;
+    }
+    #yugi-btn,#kaiba-btn,#marik-btn,#joey-btn,#mai-btn {
+        padding: 15px 15px;
+        font-size: 20px;
+        margin-left: 45px;
+        margin-top: 30px;
     }
 }

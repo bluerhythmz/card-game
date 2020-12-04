@@ -121,6 +121,12 @@ const mai = new Duelist("Mai", maiCards)
 
 let characterArray = [yugi, kaiba, marik, joey, mai]
 
+let yugiOpponentArray = [kaiba, marik, joey, mai]
+let kaibaOpponentArray = [yugi, marik, joey, mai]
+let marikOpponentArray = [yugi, kaiba, joey, mai]
+let joeyOpponentArray = [yugi, kaiba, marik, mai]
+let maiOpponentArray = [yugi, kaiba, marik, joey]
+
 
 const duel = (duelist1, duelist2) => {
     
@@ -134,7 +140,7 @@ const duel = (duelist1, duelist2) => {
         battleText.innerHTML = ""
         tally1.innerHTML = `${duelist1.name}'s LifePoints: ${duelist1.lifePoints}`;
         tally2.innerHTML = `${duelist2.name}'s LifePoints: ${duelist2.lifePoints}`;
-        setTimeout(battlePhase, 1500)
+        setTimeout(battlePhase, 1700)
         //----
         function battlePhase() {
             result1.innerHTML = `${duelist1.name} with ${duelist1Cards.cardName} atk ${duelist1Cards.attackPoints}`;
@@ -142,7 +148,7 @@ const duel = (duelist1, duelist2) => {
             battleText.innerHTML = "Declared Battle"
             tally1.innerHTML = `${duelist1.name}'s LifePoints: ${duelist1.lifePoints}`;
             tally2.innerHTML = `${duelist2.name}'s LifePoints: ${duelist2.lifePoints}`;
-            setTimeout(calculation, 1500)
+            setTimeout(calculation, 1700)
         }
         function calculation() {
             let attackDifference = Math.abs(duelist1Cards.attackPoints - duelist2Cards.attackPoints)
@@ -154,7 +160,7 @@ const duel = (duelist1, duelist2) => {
                 console.log(`${duelist1.name}'s LifePoints: ${duelist1.lifePoints}`);
                 result1.innerHTML = `${duelist1.name} with ${duelist1Cards.cardName} atk ${duelist1Cards.attackPoints}`;
                 battleText.innerHTML = "Battled";
-                result2.innerHTML = `${duelist2.name}'s ${duelist2Cards.cardName} atk ${duelist2Cards.attackPoints}.`;
+                result2.innerHTML = `${duelist2.name}'s ${duelist2Cards.cardName} atk ${duelist2Cards.attackPoints} and lost -${attackDifference}.`;
                 tally1.innerHTML = `${duelist1.name}'s LifePoints: ${duelist1.lifePoints}`;
                 tally2.innerHTML = `${duelist2.name}'s LifePoints: ${duelist2.lifePoints}`;
                 if(duelist2.lifePoints <= 0) {
@@ -167,7 +173,7 @@ const duel = (duelist1, duelist2) => {
                 duelist1.lifePoints = duelist1.lifePoints - attackDifference; 
                 console.log(`${duelist1.name} LifePoints: ${duelist1.lifePoints}`)
                 console.log(`${duelist2.name}'s LifePoints: ${duelist2.lifePoints}`);
-                result1.innerHTML = `${duelist1.name} with ${duelist1Cards.cardName} atk ${duelist1Cards.attackPoints}.`;
+                result1.innerHTML = `${duelist1.name} with ${duelist1Cards.cardName} atk ${duelist1Cards.attackPoints} and lost -${attackDifference}.`;
                 result2.innerHTML = `${duelist2.name}'s ${duelist2Cards.cardName} atk ${duelist2Cards.attackPoints}.`
                 battleText.innerHTML = "Battled"
                 tally1.innerHTML = `${duelist1.name}'s LifePoints: ${duelist1.lifePoints}`
@@ -193,7 +199,7 @@ const duel = (duelist1, duelist2) => {
                 result1.innerHTML = `${duelist2.name} is DEFEATED`
                 result2.innerHTML = `${duelist2.name} is The King of Games`
           } if (duelist1.lifePoints > 0 && duelist2.lifePoints > 0) {
-            setTimeout(duelStart, 1500)
+            setTimeout(duelStart, 1700)
                   
             } 
             
@@ -203,31 +209,31 @@ const duel = (duelist1, duelist2) => {
 }
 
 startYugi.addEventListener('click', () => {
-    duel(yugi, characterArray[Math.floor(Math.random() * 5)])
+    duel(yugi, yugiOpponentArray[Math.floor(Math.random() * 4)])
     buttonContainer.classList.add('hide')
     pointsContainer.style.display ="flex"
 })
 
 startKaiba.addEventListener('click', () => {
-    duel(kaiba, characterArray[Math.floor(Math.random() * 5)])
+    duel(kaiba, kaibaOpponentArray[Math.floor(Math.random() * 4)])
     buttonContainer.classList.add('hide')
     pointsContainer.style.display ="flex"
 })
 
 startMarik.addEventListener('click', () => {
-    duel(marik, characterArray[Math.floor(Math.random() * 5)])
+    duel(marik, marikOpponentArray[Math.floor(Math.random() * 4)])
     buttonContainer.classList.add('hide')
     pointsContainer.style.display ="flex"
 })
 
 startJoey.addEventListener('click', () => {
-    duel(joey, characterArray[Math.floor(Math.random() * 5)])
+    duel(joey, joeyOpponentArray[Math.floor(Math.random() * 4)])
     buttonContainer.classList.add('hide')
     pointsContainer.style.display ="flex"
 })
 
 startMai.addEventListener('click', () => {
-    duel(mai, characterArray[Math.floor(Math.random() * 5)])
+    duel(mai, maiOpponentArray[Math.floor(Math.random() * 4)])
     buttonContainer.classList.add('hide')
     pointsContainer.style.display ="flex"
 })

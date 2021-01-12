@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Goldman', cursive;
 }
 
 html {
@@ -12,10 +11,11 @@ html {
     background-size: 100% 100%;
     background-position: center;
     background-attachment: fixed;
+    font-family: 'Goldman', cursive;
+    font-size: 62.5%;
 }
 
 body {
-    
     height: 100%;
     width: 100%;
     display: flex;
@@ -39,7 +39,7 @@ body {
 
 h1 {
     color: rgb(185, 99, 0);
-    font-size: 100px;
+    font-size: 3rem;
     position: relative;
     
 }
@@ -54,7 +54,7 @@ h1 {
     position: relative;
     display: inline-block;
     color: #fff;
-    font-size: 3rem;
+    font-size: 4rem;
     text-transform: uppercase;
     animation: animate 2s ease-in-out infinite;
     animation-delay: calc(0.1s * var(--i));
@@ -76,23 +76,23 @@ h1 {
 }
 
 #result1 {
-    width: 800px;
+    width: 80rem;
     color: rgb(0, 228, 197);
-    font-size: 50px;
+    font-size: 5rem;
     word-wrap: normal;
 }
 
 #result2 {
-    width: 800px;
+    width: 80rem;
     color: rgb(72, 52, 253);
-    font-size: 50px;
+    font-size: 5rem;
     word-wrap: normal;
 }
 
 #battleText {
-    width: 800px;
+    width: 80rem;
     color: rgb(155, 0, 0);
-    font-size: 50px;
+    font-size: 5rem;
     word-wrap: normal;
 }
 
@@ -107,34 +107,45 @@ h1 {
 #pointsTally1 {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('lpbg.jpg');
     height: 100%;
-    width: 50%;
-    color: rgb(255, 187, 1);
-    font-size: 50px;
-    word-wrap: normal;
-    border-radius: 20px;
-    padding-left: 40px;
-    margin-right: 30px;
+    width: 90rem;
+    border-radius: 2rem;
+    margin-right: 3rem;
     border: 5px solid black;
     box-shadow: 10px 10px 50px 10px black inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#point-text1 {
+    color: rgb(255, 187, 1);
+    font-size: 5rem;
 }
 
 #pointsTally2 {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('lpbg.jpg');
     height: 100%;
-    width: 50%;
+    width: 90rem;
     color: rgb(255, 187, 1);
-    font-size: 50px;
-    word-wrap: normal;
-    border-radius: 20px;
-    padding-left: 40px;
-    margin-right: 30px;
+    font-size: 5rem;
+    border-radius: 2rem;
+    padding-left: 4rem;
+    margin-right: 3rem;
     border: 5px solid black;
     box-shadow: 10px 10px 50px 10px black inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#point-text2 {
+    color: rgb(255, 187, 1);
+    font-size: 5rem;
 }
 
 #yugi-btn {
-    padding: 20px 30px;
-    font-size: 30px;
+    padding: 2rem 3rem;
+    font-size: 3rem;
     border-radius: 1000px;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
     border: 5px solid black;
@@ -154,12 +165,12 @@ h1 {
 }
 
 #yugi-btn:active {
-    padding: 19px 30px;
+    padding: 1.9rem 3rem;
 }
 
 #kaiba-btn {
-    padding: 20px 30px;
-    font-size: 30px;
+    padding: 2rem 3rem;
+    font-size: 3rem;
     border-radius: 1000px;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
     border: 5px solid black;
@@ -179,12 +190,12 @@ h1 {
 }
 
 #kaiba-btn:active {
-    padding: 19px 30px;
+    padding: 1.9rem 3rem;
 }
 
 #marik-btn {
-    padding: 20px 30px;
-    font-size: 30px;
+    padding: 2rem 3rem;
+    font-size: 3rem;
     border-radius: 1000px;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
     border: 5px solid black;
@@ -204,12 +215,12 @@ h1 {
 }
 
 #marik-btn:active {
-    padding: 19px 30px;
+    padding: 1.9rem 3rem;
 }
 
 #joey-btn {
-    padding: 20px 30px;
-    font-size: 30px;
+    padding: 2rem 3rem;
+    font-size: 3rem;
     border-radius: 1000px;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
     border: 5px solid black;
@@ -229,12 +240,12 @@ h1 {
 }
 
 #joey-btn:active {
-    padding: 19px 30px;
+    padding: 1.9rem 3rem;
 }
 
 #mai-btn {
-    padding: 20px 30px;
-    font-size: 30px;
+    padding: 2rem 3rem;
+    font-size: 3rem;
     border-radius: 1000px;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
     border: 5px solid black;
@@ -254,7 +265,7 @@ h1 {
 }
 
 #mai-btn:active {
-    padding: 19px 30px;
+    padding: 1.9rem 3rem;
 }
 
 .hide {
@@ -321,6 +332,10 @@ h1 {
         width: 50%;
         padding-left: 30px;
     }
+    #point-text1 {
+        color: rgb(255, 187, 1);
+        font-size: 1.6rem;
+    }
     #pointsTally2 {
         font-size: 16px;
         width: 50%;
@@ -352,6 +367,10 @@ h1 {
         font-size: 18px;
         width: 50%;
         padding-left: 20px;
+    }
+    #point-text1 {
+        color: rgb(255, 187, 1);
+        font-size: 5rem;
     }
     #pointsTally2 {
         font-size: 18px;

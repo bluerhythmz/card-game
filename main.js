@@ -106,7 +106,7 @@ class Duelist {
     constructor(name, _cards) {
         this.name = name;
         this.cards = _cards;
-        this.lifePoints = 100;
+        this.lifePoints = 8000;
         }   
 }
 
@@ -117,12 +117,7 @@ const joey = new Duelist("Joey", characterCards.joeyCards)
 const mai = new Duelist("Mai", characterCards.maiCards)
 
 let characterArray = [yugi, kaiba, marik, joey, mai]
-
-let yugiOpponentArray = [kaiba, marik, joey, mai]
-let kaibaOpponentArray = [yugi, marik, joey, mai]
-let marikOpponentArray = [yugi, kaiba, joey, mai]
-let joeyOpponentArray = [yugi, kaiba, marik, mai]
-let maiOpponentArray = [yugi, kaiba, marik, joey]
+let duelingOpponent = characterArray[Math.floor(Math.random() * 5)]   
 
 const duel = (duelist1, duelist2) => {
     
@@ -188,7 +183,6 @@ const duel = (duelist1, duelist2) => {
             setTimeout(duelStart, 1700)
                   
             } 
-            
         } 
     }
 
@@ -215,27 +209,31 @@ function displayPoints() {
 const startBtns = [startYugi, startKaiba, startMarik, startJoey, startMai]
 
 startBtns.forEach((btn, i) => {
-    function playerSelect(player, opponent) {
+    function playerSelect(player, opponent) {    
         btn.addEventListener('click', () => {
-            duel(player, opponent[Math.floor(Math.random() * 4)])
+            if (player === opponent) {
+                characterArray.pop(opponent)
+                opponent = characterArray[Math.floor(Math.random() * 4)]
+            }
+            duel(player, opponent)
             displayPoints()
         })
     }
     switch (i) {
         case 0:
-            playerSelect(yugi, yugiOpponentArray)
+            playerSelect(yugi, duelingOpponent)
             break;
         case 1:
-            playerSelect(kaiba, kaibaOpponentArray)
+            playerSelect(kaiba, duelingOpponent)
             break;
         case 2:
-            playerSelect(marik, marikOpponentArray)
+            playerSelect(marik, duelingOpponent)
             break;
         case 3:
-            playerSelect(joey, joeyOpponentArray)
+            playerSelect(joey, duelingOpponent)
             break;
         case 4:
-            playerSelect(mai, maiOpponentArray)
+            playerSelect(mai, duelingOpponent)
             break;
         default:
             alert("error")

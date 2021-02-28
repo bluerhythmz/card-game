@@ -31,6 +31,9 @@ body {
 
 .display-panel {
     display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
     position: absolute;
     top: 0;
     height: 100%;
@@ -53,29 +56,31 @@ body {
 }
 
 .image {
-    /* min-width: 50%;
+    
     max-width: 60%;
-    max-height: 60%; */
-    width: 80%;
+    
+    /* width: 80%; */
     margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 0rem;
     display: block;
 }
 
 .display-panel-info {
-    min-height: 60%;
-    min-width: 100%;
+    max-height: 50%;
+    max-width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
 }
 
-.display-panel-points {
+.display-panel-atkpoints {
     font-size: 5rem;
+    font-weight: 400;
     color: white;
     padding: 3rem 2rem;
     border-radius: 6px;
+    margin-bottom: 5rem;
 }
 
 .display-panel-lp {
@@ -89,12 +94,14 @@ body {
 .life-points {
     color: white;
     font-size: 6rem;
+    font-weight: 500;
 }
 
 .lp-avatar {
     display: block;
     max-height: 50%;
     margin: 0 auto;
+    margin-top: 1rem;
 }
 
 h1 {
@@ -105,27 +112,31 @@ h1 {
 }
 
 .duel-moves {
-    height: 50rem;
-    width: 60rem;
+    max-height: 40rem;
+    min-width: 20%;
+    max-width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin: 0 auto;
-    margin-bottom: 5rem;
+    margin-bottom: 15rem;
 }
 
 #result1 {
     color: rgb(0, 228, 197);
-    font-size: 50px;
+    font-size: 6rem;
 }
 
 #result2 {
     color: rgb(72, 52, 253);
-    font-size: 50px;
+    font-size: 6rem;
     margin-top: 5rem;
 }
 
 #battleText {
-    width: 80rem;
     color: rgb(155, 0, 0);
-    font-size: 50px;
+    font-size: 5rem;
 }
 
 .points-container {
@@ -210,10 +221,13 @@ h1 {
 
 
 
-@media all and (max-width: 480px) {
+@media all and (max-width: 688px) {
     body {
         height: 100vh;
         width: 100vw;
+    }
+    main {
+        width: 100%;
     }
     .button-container {
         width: 100%;
@@ -222,18 +236,98 @@ h1 {
     .display-panel {
         display: none;
         position: absolute;
-        top: 0;
-        height: 100%;
+        flex-direction: row;
+        height: 20%;
         max-height: 100%;
-        max-width: 25%;
+        max-width: 100%;
         background: linear-gradient(rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0.74)), url(/images/background2.jpg);
     }
     .player-one {
-        left: 0;
+        top: 0;
     }
     
     .player-two {
-        right: 0;
+        top: 80%;
+    }
+    .display-panel-image {
+        max-height: 100%;
+        max-width: 20%;
+    }
+    
+    .image {
+        
+        max-width: 100%;
+        
+        /* width: 80%; */
+        margin: 0 auto;
+        margin-top: 0rem;
+        display: block;
+    }
+    .display-panel-info {
+        max-height: 50%;
+        max-width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+    }
+    
+    .display-panel-atkpoints {
+        font-size: 2rem;
+        font-weight: 400;
+        color: white;
+        padding: 3rem 2rem;
+        border-radius: 6px;
+        margin-bottom: 5rem;
+    }
+    
+    .display-panel-lp {
+        min-width: 30%;
+        max-height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+    
+    .life-points {
+        color: white;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    
+    .lp-avatar {
+        display: block;
+        max-height: 10%;
+        max-width: 40%;
+        margin: 0 auto;
+        margin-top: 1rem;
+    }
+    .duel-moves {
+        max-height: 40rem;
+        max-width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 auto;
+        margin-bottom: 15rem;
+    }
+    
+    #result1 {
+        color: rgb(0, 228, 197);
+        font-size: 3rem;
+    }
+    
+    #result2 {
+        color: rgb(72, 52, 253);
+        font-size: 3rem;
+        margin-top: 5rem;
+    }
+    
+    #battleText {
+        color: rgb(155, 0, 0);
+        font-size: 2rem;
     }
     #logo {
         height: 5vh;
@@ -252,50 +346,4 @@ h1 {
         transition: all 0.2s ease;
     }
    
-}
-
-@media all and (max-width: 740px) and (orientation: landscape) {
-    .wavy span {
-        font-size: 1.6rem;
-    }
-    #result1 {
-        font-size: 26px;
-        width: 600px;
-    }
-    #result2 {
-        font-size: 26px;
-        width: 600px;
-    }
-    .points-container {
-        height: 20vh;
-        width: 350px;
-    }
-    #pointsTally1 {
-        font-size: 18px;
-        width: 50%;
-        padding-left: 20px;
-    }
-    #point-text1 {
-        color: rgb(255, 187, 1);
-        font-size: 5rem;
-    }
-    #pointsTally2 {
-        font-size: 18px;
-        width: 50%;
-        padding-left: 20px;
-    }
-    #battleText {
-        width: 100px;
-        font-size: 24px;
-    }
-    .button-container {
-        width: 100%;
-        height: 30%;
-    }
-    #yugi-btn,#kaiba-btn,#marik-btn,#joey-btn,#mai-btn {
-        padding: 15px 15px;
-        font-size: 20px;
-        margin-left: 45px;
-        margin-top: 30px;
-    }
 }

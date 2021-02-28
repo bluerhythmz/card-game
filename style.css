@@ -12,21 +12,17 @@ html {
 }
 
 body {
-    background: linear-gradient(rgba(0, 0, 0, 0.192),rgba(0, 0, 0, 0.233)),url(/images/background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
-    background-attachment: fixed;
-    font-size: 62.5%;
-}
-
-body {
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    background: linear-gradient(rgba(0, 0, 0, 0.192),rgba(0, 0, 0, 0.233)),url(/images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 #logo {
@@ -106,37 +102,6 @@ h1 {
     font-size: 3rem;
     position: relative;
     
-}
-
-.wavy {
-    position: relative;
-    -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0,0,0,0.2));
-    
-}
-
-.wavy span {
-    position: relative;
-    display: inline-block;
-    color: #fff;
-    font-size: 4rem;
-    text-transform: uppercase;
-    animation: animate 2s ease-in-out infinite;
-    animation-delay: calc(0.1s * var(--i));
-    color: rgb(185, 99, 0);
-}
-
-
-
-@keyframes animate {
-    0% {
-        transform: translateY(0px) rotate(90deg);
-    }
-    20% {
-        transform: translateY(-20px);
-    }
-    40%,100% {
-        transform: translateY(0px);
-    }
 }
 
 .duel-moves {
@@ -245,77 +210,48 @@ h1 {
 
 
 
-@media all and (max-width: 480px) and (orientation: portrait) {
-    html {
-        background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(yugi.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        height: 100%;
-    }
+@media all and (max-width: 480px) {
     body {
-        height: 100%;
+        height: 100vh;
+        width: 100vw;
+    }
+    .button-container {
         width: 100%;
     }
 
-    .wavy span {
-        font-size: 1.6rem;
+    .display-panel {
+        display: none;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        max-height: 100%;
+        max-width: 25%;
+        background: linear-gradient(rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0.74)), url(/images/background2.jpg);
+    }
+    .player-one {
+        left: 0;
     }
     
-
-    .game {
-        height: 100vh;
-        width: 100vw;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
+    .player-two {
+        right: 0;
     }
-    .button-container {
-        width: 70%;
-        height: 50%;
-    }
-    #yugi-btn,#kaiba-btn,#marik-btn,#joey-btn,#mai-btn {
-        padding: 15px 15px;
-        font-size: 20px;
-        margin-left: 30px;
-        margin-top: 30px;
-    }
-    
     #logo {
-        height: 10vh;
+        height: 5vh;
+        margin-top: 10rem;
     }
-    #result1 {
-        font-size: 30px;
-        width: 300px;
+    .btn {
+        height: 10rem;
+        width: 3rem;
+        padding: 5rem 3.5rem;
+        border-radius: 10px;
+        border: 5px solid black;
+        box-shadow: 0.5px 0.5px 10px rgb(101, 149, 253);
+        color: goldenrod;
+        cursor: pointer;
+        margin: 0 2rem;
+        transition: all 0.2s ease;
     }
-    #result2 {
-        font-size: 30px;
-        width: 300px;
-    }
-    .points-container {
-        height: 10vh;
-        width: 350px;
-    }
-    #pointsTally1 {
-        font-size: 16px;
-        width: 50%;
-        padding-left: 30px;
-    }
-    #point-text1 {
-        color: rgb(255, 187, 1);
-        font-size: 1.6rem;
-    }
-    #pointsTally2 {
-        font-size: 16px;
-        width: 50%;
-        padding-left: 30px;
-    }
-    #battleText {
-        width: 100px;
-        font-size: 30px;
-    }
+   
 }
 
 @media all and (max-width: 740px) and (orientation: landscape) {

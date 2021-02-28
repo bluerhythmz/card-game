@@ -7,22 +7,56 @@
     <title>Document</title>
 </head>
 <body>
-    <img id="logo" src="logo.png" alt="">
-    <div id="result1"></div>
-    <div id="battleText"></div>
-    <div id="result2"></div>
-    <div class="points-container">
-        <div id="pointsTally1"></div>
-        <div id="pointsTally2"></div>
-    </div>
+    <img id="logo" src="/images/logo.png" alt="">
+    <main>
+        <div class="display-panel player-one">
+            <div  class="display-panel-image">
+                <img id="duelist1-card" src="/images/cardimages/axe raider.png" class="image" alt="">
+            </div>
+            <div class="display-panel-info">
+                <h2 id="duelist1-panel-atk" class="display-panel-points"></h2>
+                <div class="display-panel-lp">
+                    <p id="duelist1-lp" class="life-points">LP: 8000</p>
+                    <img id="duelist1-avatar" class="lp-avatar" src="/images/dm01.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="display-panel player-two">
+            <div class="display-panel-image">
+                <img id="duelist2-card" src="/images/cardimages/blue eyes white dragon.png" class="image" alt="">
+            </div>
+            <div class="display-panel-info">
+                <h2 id="duelist2-panel-atk" class="display-panel-points">ATK: 4000</h2>
+                <div class="display-panel-lp">
+                    <p id="duelist2-lp" class="life-points">LP: 8000</p>
+                    <img id="duelist2-avatar" class="lp-avatar" src="/images/dm01.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="duel-moves">
+            <div id="result1"></div>
+            <div id="battleText"></div>
+            <div id="result2"></div>
+        </div>
+
+        
+        
+        <div class="points-container">
+            
+            
+        </div>
+        
+        <div class="button-container">
+            <button id="yugi-btn" class="btn btn__yugi" type="button"></button>
+            <button id="kaiba-btn" class="btn btn__kaiba" type="button"></button>
+            <button id="marik-btn" class="btn btn__marik" type="button"></button>
+            <button id="joey-btn" class="btn btn__joey" type="button"></button>
+            <button id="mai-btn" class="btn btn__mai" type="button"></button>
+        </div>
+    </main>
     
-    <div class="button-container">
-        <button id="yugi-btn" type="button">Yugi</button>
-        <button id="kaiba-btn" type="button">Kaiba</button>
-        <button id="marik-btn" type="button">Marik</button>
-        <button id="joey-btn" type="button">Joey</button>
-        <button id="mai-btn" type="button">Mai</button>
-    </div>
     
     
 

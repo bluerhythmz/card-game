@@ -1,13 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Goldman', cursive;
+    
+}
+
+html {
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 62.5%;
 }
 
 body {
-    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(yugi.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.192),rgba(0, 0, 0, 0.233)),url(/images/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -20,7 +25,72 @@ body {
 }
 
 #logo {
-    height: 20vh;
+    height: 20rem;
+}
+
+.display-panel {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    max-height: 100%;
+    max-width: 25%;
+    background: linear-gradient(rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0.74)), url(/images/background2.jpg);
+}
+
+.player-one {
+    left: 0;
+}
+
+.player-two {
+    right: 0;
+}
+
+.display-panel-image {
+    max-height: 50%;
+    width: 100%;
+}
+
+.image {
+    max-width: 80%;
+    max-height: 80%;
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: block;
+}
+
+.display-panel-info {
+    min-height: 60%;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.display-panel-points {
+    font-size: 5rem;
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 6px;
+}
+
+.display-panel-lp {
+    min-width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.life-points {
+    color: white;
+    font-size: 6rem;
+}
+
+.lp-avatar {
+    display: block;
+    max-height: 50%;
+    margin: 0 auto;
 }
 
 h1 {
@@ -28,25 +98,28 @@ h1 {
     font-size: 100px;
 }
 
+.duel-moves {
+    height: 50rem;
+    width: 60rem;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+}
+
 #result1 {
-    width: 800px;
     color: rgb(0, 228, 197);
     font-size: 50px;
-    word-wrap: normal;
 }
 
 #result2 {
-    width: 800px;
     color: rgb(72, 52, 253);
     font-size: 50px;
-    word-wrap: normal;
+    margin-top: 5rem;
 }
 
 #battleText {
     width: 800px;
     color: rgb(155, 0, 0);
     font-size: 50px;
-    word-wrap: normal;
 }
 
 .points-container {
@@ -57,157 +130,72 @@ h1 {
     display: none;
 }
 
-#pointsTally1 {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('lpbg.jpg');
-    height: 100%;
-    width: 50%;
-    color: rgb(255, 187, 1);
-    font-size: 50px;
-    word-wrap: normal;
-    border-radius: 20px;
-    padding-left: 40px;
-    margin-right: 30px;
-    border: 5px solid black;
-    box-shadow: 10px 10px 50px 10px black inset;
+.button-container {
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-#pointsTally2 {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('lpbg.jpg');
-    height: 100%;
-    width: 50%;
-    color: rgb(255, 187, 1);
-    font-size: 50px;
-    word-wrap: normal;
-    border-radius: 20px;
-    padding-left: 40px;
-    margin-right: 30px;
+.btn {
+    height: 15rem;
+    width: 12rem;
+    padding: 5rem 3.5rem;
+    font-size: 3rem;
+    border-radius: 10px;
     border: 5px solid black;
-    box-shadow: 10px 10px 50px 10px black inset;
-}
-
-#yugi-btn {
-    padding: 20px 30px;
-    font-size: 30px;
-    border-radius: 1000px;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
-    border: 5px solid black;
-    box-shadow: 0.5px 0.5px 10px goldenrod;
+    box-shadow: 0.5px 0.5px 10px rgb(101, 149, 253);
     color: goldenrod;
     text-shadow: 5px 1px 1px rgb(0, 0, 0);
     cursor: pointer;
+    margin: 0 2rem;
+    transition: all 0.2s ease;
 }
 
-#yugi-btn:focus {
-    outline: none;
-}
-
-#yugi-btn:hover {
+.btn:hover {
     color: gold;
     box-shadow: 1px 1px 20px gold;
 }
 
-#yugi-btn:active {
-    padding: 19px 30px;
-}
-
-#kaiba-btn {
-    padding: 20px 30px;
-    font-size: 30px;
-    border-radius: 1000px;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
-    border: 5px solid black;
-    box-shadow: 0.5px 0.5px 10px goldenrod;
-    color: goldenrod;
-    text-shadow: 5px 1px 1px rgb(0, 0, 0);
-    cursor: pointer;
-}
-
-#kaiba-btn:focus {
+.btn:focus {
     outline: none;
 }
 
-#kaiba-btn:hover {
-    color: gold;
-    box-shadow: 1px 1px 20px gold;
-}
-
-#kaiba-btn:active {
+.btn:active {
     padding: 19px 30px;
 }
 
-#marik-btn {
-    padding: 20px 30px;
-    font-size: 30px;
-    border-radius: 1000px;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
-    border: 5px solid black;
-    box-shadow: 0.5px 0.5px 10px goldenrod;
-    color: goldenrod;
-    text-shadow: 5px 1px 1px rgb(0, 0, 0);
-    cursor: pointer;
+.btn__yugi {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/dm01.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#marik-btn:focus {
-    outline: none;
+.btn__kaiba {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/dm02.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#marik-btn:hover {
-    color: gold;
-    box-shadow: 1px 1px 20px gold;
+.btn__marik {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/dm10.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#marik-btn:active {
-    padding: 19px 30px;
+.btn__joey {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/dm03.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#joey-btn {
-    padding: 20px 30px;
-    font-size: 30px;
-    border-radius: 1000px;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
-    border: 5px solid black;
-    box-shadow: 0.5px 0.5px 10px goldenrod;
-    color: goldenrod;
-    text-shadow: 5px 1px 1px rgb(0, 0, 0);
-    cursor: pointer;
-}
-
-#joey-btn:focus {
-    outline: none;
-}
-
-#joey-btn:hover {
-    color: gold;
-    box-shadow: 1px 1px 20px gold;
-}
-
-#joey-btn:active {
-    padding: 19px 30px;
-}
-
-#mai-btn {
-    padding: 20px 30px;
-    font-size: 30px;
-    border-radius: 1000px;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
-    border: 5px solid black;
-    box-shadow: 0.5px 0.5px 10px goldenrod;
-    color: goldenrod;
-    text-shadow: 5px 1px 1px rgb(0, 0, 0);
-    cursor: pointer;
-}
-
-#mai-btn:focus {
-    outline: none;
-}
-
-#mai-btn:hover {
-    color: gold;
-    box-shadow: 1px 1px 20px gold;
-}
-
-#mai-btn:active {
-    padding: 19px 30px;
+.btn__mai{
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/dm04.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hide {

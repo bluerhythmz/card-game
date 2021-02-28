@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+<<<<<<< HEAD
     
 }
 
@@ -13,9 +14,30 @@ html {
 
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.192),rgba(0, 0, 0, 0.233)),url(/images/background.jpg);
+=======
+}
+
+html {
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(yugi.jpg);
+>>>>>>> ae5afc6d10f7ba3f9948c3d7b0a4e917886ba23c
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
+    background-attachment: fixed;
+    font-family: 'Goldman', cursive;
+    font-size: 62.5%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -94,8 +116,41 @@ body {
 }
 
 h1 {
-    color: white;
-    font-size: 100px;
+    color: rgb(185, 99, 0);
+    font-size: 3rem;
+    position: relative;
+    
+}
+
+.wavy {
+    position: relative;
+    -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0,0,0,0.2));
+    
+}
+
+.wavy span {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 4rem;
+    text-transform: uppercase;
+    animation: animate 2s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+    color: rgb(185, 99, 0);
+}
+
+
+
+@keyframes animate {
+    0% {
+        transform: translateY(0px) rotate(90deg);
+    }
+    20% {
+        transform: translateY(-20px);
+    }
+    40%,100% {
+        transform: translateY(0px);
+    }
 }
 
 .duel-moves {
@@ -106,6 +161,7 @@ h1 {
 }
 
 #result1 {
+<<<<<<< HEAD
     color: rgb(0, 228, 197);
     font-size: 50px;
 }
@@ -114,12 +170,30 @@ h1 {
     color: rgb(72, 52, 253);
     font-size: 50px;
     margin-top: 5rem;
+=======
+    width: 80rem;
+    color: rgb(0, 228, 197);
+    font-size: 5rem;
+    word-wrap: normal;
+}
+
+#result2 {
+    width: 80rem;
+    color: rgb(72, 52, 253);
+    font-size: 5rem;
+    word-wrap: normal;
+>>>>>>> ae5afc6d10f7ba3f9948c3d7b0a4e917886ba23c
 }
 
 #battleText {
-    width: 800px;
+    width: 80rem;
     color: rgb(155, 0, 0);
+<<<<<<< HEAD
     font-size: 50px;
+=======
+    font-size: 5rem;
+    word-wrap: normal;
+>>>>>>> ae5afc6d10f7ba3f9948c3d7b0a4e917886ba23c
 }
 
 .points-container {
@@ -130,6 +204,7 @@ h1 {
     display: none;
 }
 
+<<<<<<< HEAD
 .button-container {
     max-width: 100%;
     margin: 0 auto;
@@ -141,6 +216,77 @@ h1 {
     padding: 5rem 3.5rem;
     font-size: 3rem;
     border-radius: 10px;
+=======
+#pointsTally1 {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('lpbg.jpg');
+    height: 100%;
+    width: 90rem;
+    border-radius: 2rem;
+    margin-right: 3rem;
+    border: 5px solid black;
+    box-shadow: 10px 10px 50px 10px black inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#point-text1 {
+    color: rgb(255, 187, 1);
+    font-size: 5rem;
+}
+
+#pointsTally2 {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('lpbg.jpg');
+    height: 100%;
+    width: 90rem;
+    color: rgb(255, 187, 1);
+    font-size: 5rem;
+    border-radius: 2rem;
+    padding-left: 4rem;
+    margin-right: 3rem;
+    border: 5px solid black;
+    box-shadow: 10px 10px 50px 10px black inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#point-text2 {
+    color: rgb(255, 187, 1);
+    font-size: 5rem;
+}
+
+#yugi-btn {
+    padding: 2rem 3rem;
+    font-size: 3rem;
+    border-radius: 1000px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
+    border: 5px solid black;
+    box-shadow: 0.5px 0.5px 10px goldenrod;
+    color: goldenrod;
+    text-shadow: 5px 1px 1px rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+#yugi-btn:focus {
+    outline: none;
+}
+
+#yugi-btn:hover {
+    color: gold;
+    box-shadow: 1px 1px 20px gold;
+}
+
+#yugi-btn:active {
+    padding: 1.9rem 3rem;
+}
+
+#kaiba-btn {
+    padding: 2rem 3rem;
+    font-size: 3rem;
+    border-radius: 1000px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
+>>>>>>> ae5afc6d10f7ba3f9948c3d7b0a4e917886ba23c
     border: 5px solid black;
     box-shadow: 0.5px 0.5px 10px rgb(101, 149, 253);
     color: goldenrod;
@@ -155,6 +301,7 @@ h1 {
     box-shadow: 1px 1px 20px gold;
 }
 
+<<<<<<< HEAD
 .btn:focus {
     outline: none;
 }
@@ -175,6 +322,72 @@ h1 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+=======
+#kaiba-btn:active {
+    padding: 1.9rem 3rem;
+}
+
+#marik-btn {
+    padding: 2rem 3rem;
+    font-size: 3rem;
+    border-radius: 1000px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
+    border: 5px solid black;
+    box-shadow: 0.5px 0.5px 10px goldenrod;
+    color: goldenrod;
+    text-shadow: 5px 1px 1px rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+#marik-btn:focus {
+    outline: none;
+}
+
+#marik-btn:hover {
+    color: gold;
+    box-shadow: 1px 1px 20px gold;
+}
+
+#marik-btn:active {
+    padding: 1.9rem 3rem;
+}
+
+#joey-btn {
+    padding: 2rem 3rem;
+    font-size: 3rem;
+    border-radius: 1000px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
+    border: 5px solid black;
+    box-shadow: 0.5px 0.5px 10px goldenrod;
+    color: goldenrod;
+    text-shadow: 5px 1px 1px rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+#joey-btn:focus {
+    outline: none;
+}
+
+#joey-btn:hover {
+    color: gold;
+    box-shadow: 1px 1px 20px gold;
+}
+
+#joey-btn:active {
+    padding: 1.9rem 3rem;
+}
+
+#mai-btn {
+    padding: 2rem 3rem;
+    font-size: 3rem;
+    border-radius: 1000px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('buttonimg.jpg');
+    border: 5px solid black;
+    box-shadow: 0.5px 0.5px 10px goldenrod;
+    color: goldenrod;
+    text-shadow: 5px 1px 1px rgb(0, 0, 0);
+    cursor: pointer;
+>>>>>>> ae5afc6d10f7ba3f9948c3d7b0a4e917886ba23c
 }
 
 .btn__marik {
@@ -191,13 +404,139 @@ h1 {
     background-repeat: no-repeat;
 }
 
+<<<<<<< HEAD
 .btn__mai{
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/dm04.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+=======
+#mai-btn:active {
+    padding: 1.9rem 3rem;
+>>>>>>> ae5afc6d10f7ba3f9948c3d7b0a4e917886ba23c
 }
 
 .hide {
     display: none;
+}
+
+
+
+@media all and (max-width: 480px) and (orientation: portrait) {
+    html {
+        background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(yugi.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    .wavy span {
+        font-size: 1.6rem;
+    }
+    
+
+    .game {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
+    .button-container {
+        width: 70%;
+        height: 50%;
+    }
+    #yugi-btn,#kaiba-btn,#marik-btn,#joey-btn,#mai-btn {
+        padding: 15px 15px;
+        font-size: 20px;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    
+    #logo {
+        height: 10vh;
+    }
+    #result1 {
+        font-size: 30px;
+        width: 300px;
+    }
+    #result2 {
+        font-size: 30px;
+        width: 300px;
+    }
+    .points-container {
+        height: 10vh;
+        width: 350px;
+    }
+    #pointsTally1 {
+        font-size: 16px;
+        width: 50%;
+        padding-left: 30px;
+    }
+    #point-text1 {
+        color: rgb(255, 187, 1);
+        font-size: 1.6rem;
+    }
+    #pointsTally2 {
+        font-size: 16px;
+        width: 50%;
+        padding-left: 30px;
+    }
+    #battleText {
+        width: 100px;
+        font-size: 30px;
+    }
+}
+
+@media all and (max-width: 740px) and (orientation: landscape) {
+    .wavy span {
+        font-size: 1.6rem;
+    }
+    #result1 {
+        font-size: 26px;
+        width: 600px;
+    }
+    #result2 {
+        font-size: 26px;
+        width: 600px;
+    }
+    .points-container {
+        height: 20vh;
+        width: 350px;
+    }
+    #pointsTally1 {
+        font-size: 18px;
+        width: 50%;
+        padding-left: 20px;
+    }
+    #point-text1 {
+        color: rgb(255, 187, 1);
+        font-size: 5rem;
+    }
+    #pointsTally2 {
+        font-size: 18px;
+        width: 50%;
+        padding-left: 20px;
+    }
+    #battleText {
+        width: 100px;
+        font-size: 24px;
+    }
+    .button-container {
+        width: 100%;
+        height: 30%;
+    }
+    #yugi-btn,#kaiba-btn,#marik-btn,#joey-btn,#mai-btn {
+        padding: 15px 15px;
+        font-size: 20px;
+        margin-left: 45px;
+        margin-top: 30px;
+    }
 }

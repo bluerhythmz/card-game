@@ -158,7 +158,7 @@ class Duelist {
         this.name = name;
         this.cards = _cards;
         this.avatar = avatar
-        this.lifePoints = 100;
+        this.lifePoints = 8000;
         }   
 }
 

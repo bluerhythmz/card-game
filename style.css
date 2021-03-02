@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 }
 
 html {
-    font-family: 'DotGothic16', sans-serif;
+    font-family: 'Goldman', cursive;
     font-size: 62.5%;
 }
 
@@ -18,7 +18,7 @@ body {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(rgba(0, 0, 0, 0.192),rgba(0, 0, 0, 0.233)),url(/images/background.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.568),rgba(0, 0, 0, 0.541)),url(/images/background.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
@@ -36,11 +36,11 @@ body {
     flex-direction: row;
     position: absolute;
     top: 0;
-    height: 15%;
+    height: 12%;
     max-height: 100%;
     width: 100%;
     max-width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0.74)), url(/images/background2.jpg);
+    background: linear-gradient(135deg,rgb(0, 0, 100), rgb(0, 0, 30))
 }
 
 .player-one {
@@ -49,7 +49,7 @@ body {
 }
 
 .player-two {
-    top: 85%;
+    top: 87.8%;
     right: 0;
 }
 
@@ -62,9 +62,7 @@ body {
 }
 
 .image {
-    max-width: 16%;
-    
-    /* width: 80%; */
+    max-width: 13%;
     margin: 0 auto;
     margin-top: 0rem;
     display: block;
@@ -116,9 +114,11 @@ body {
 .lp-avatar {
     display: block;
     max-height: 5%;
-    max-width: 20%;
+    max-width: 15%;
     margin: 0 auto;
     margin-top: 0rem;
+    border: 4px solid silver;
+    border-radius: 3px;
 }
 
 h1 {
@@ -141,12 +141,12 @@ h1 {
 }
 
 #duelist1-monster {
-    max-width: 80%;
+    max-width: 60%;
     display: block;
 }
 
 #duelist2-monster {
-    max-width: 80%;
+    max-width: 60%;
     display: block;
 }
 
@@ -161,9 +161,10 @@ h1 {
 }
 
 #battleText {
-    color: rgb(155, 0, 0);
+    color: rgb(41, 0, 155);
     font-size: 5rem;
     margin: 3rem;
+    text-shadow: 1px 3px  silver;
 }
 
 .points-container {
@@ -340,7 +341,7 @@ h1 {
     .lp-avatar {
         display: block;
         max-height: 10%;
-        max-width: 40%;
+        max-width: 70%;
         margin: 0 auto;
         margin-top: 1rem;
     }
@@ -376,8 +377,7 @@ h1 {
         margin-top: 0rem;
     }
     
-    #battleText {
-        color: rgb(155, 0, 0);
+    #battleText {   
         font-size: 2rem;
         margin: 1rem;
     }

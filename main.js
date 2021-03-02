@@ -1,8 +1,3 @@
-let result1 = document.getElementById('result1');
-let result2 = document.getElementById('result2');
-let battleText = document.getElementById('battleText');
-let tally1 = document.getElementById("duelist1-lp");
-let tally2 = document.getElementById("duelist2-lp");
 const startYugi = document.getElementById('yugi-btn')
 const startKaiba = document.getElementById('kaiba-btn')
 const startMarik = document.getElementById('marik-btn')
@@ -168,13 +163,16 @@ const marik = new Duelist("Marik", marikCards, '/images/dm10.png')
 const joey = new Duelist("Joey", joeyCards, '/images/dm03.png')
 const mai = new Duelist("Mai", maiCards, '/images/dm04.png')
 
-let characterArray = [yugi, kaiba, marik, joey, mai]
-let duelingOpponent = characterArray[Math.floor(Math.random() * 5)]
-
-  
+let duelistArray = [yugi, kaiba, marik, joey, mai]
+let duelingOpponent = duelistArray[Math.floor(Math.random() * 5)]
 
 const duel = (duelist1, duelist2) => {
-    
+    let result1 = document.getElementById('result1');
+    let result2 = document.getElementById('result2');
+    let battleText = document.getElementById('battleText');
+    let tally1 = document.getElementById("duelist1-lp");
+    let tally2 = document.getElementById("duelist2-lp");
+
     duelStart()
     function duelStart() {
         
@@ -296,20 +294,11 @@ const duel = (duelist1, duelist2) => {
     }
 }
 
-
-/* startYugi.addEventListener('click', () => {
-    duel(yugi, characterArray[Math.floor(Math.random() * 5)])
-    buttonContainer.classList.add('hide')
-    pointsContainer.style.display ="flex"
-}) */
-
 function displayPoints() {
     buttonContainer.classList.add('hide')
     d1Panel.style.display ="flex"
     d2Panel.style.display ="flex"
 }
-
-
 
 const startBtns = [startYugi, startKaiba, startMarik, startJoey, startMai]
 
@@ -317,8 +306,8 @@ startBtns.forEach((btn, i) => {
     function playerSelect(player, opponent) {    
         btn.addEventListener('click', () => {
             if (player === opponent) {
-                characterArray.pop(opponent)
-                opponent = characterArray[Math.floor(Math.random() * 4)]
+                duelistArray.pop(opponent)
+                opponent = duelistArray[Math.floor(Math.random() * 4)]
             }
             logo.style.display = "none"
             duel(player, opponent)

@@ -3,13 +3,12 @@ let result2 = document.getElementById('result2');
 let battleText = document.getElementById('battleText');
 let tally1 = document.getElementById("duelist1-lp");
 let tally2 = document.getElementById("duelist2-lp");
-let startYugi = document.getElementById('yugi-btn')
-let startKaiba = document.getElementById('kaiba-btn')
-let startMarik = document.getElementById('marik-btn')
-let startJoey = document.getElementById('joey-btn')
-let startMai = document.getElementById('mai-btn')
+const startYugi = document.getElementById('yugi-btn')
+const startKaiba = document.getElementById('kaiba-btn')
+const startMarik = document.getElementById('marik-btn')
+const startJoey = document.getElementById('joey-btn')
+const startMai = document.getElementById('mai-btn')
 let buttonContainer = document.querySelector('.button-container')
-let pointsContainer = document.querySelector('.points-container')
 let duelist1CardImage = document.getElementById('duelist1-card')
 let duelist2CardImage = document.getElementById('duelist2-card')
 let duelist1AtkPanel = document.getElementById("duelist1-panel-atk")
@@ -18,6 +17,11 @@ let duelist1Avatar = document.getElementById("duelist1-avatar")
 let duelist2Avatar = document.getElementById("duelist2-avatar")
 let d1Panel = document.getElementById('d1Panel')
 let d2Panel = document.getElementById('d2Panel')
+let logo = document.getElementById('logo')
+let d1Cover = document.querySelector('#d1-cover')
+let d2Cover = document.querySelector('#d2-cover')
+let d1CardElement = document.getElementById('duelist1-monster')
+let d2CardElement = document.getElementById('duelist2-monster')
 
 let yugiCards = [{
     cardName: "Dark Magician",
@@ -154,7 +158,7 @@ class Duelist {
         this.name = name;
         this.cards = _cards;
         this.avatar = avatar
-        this.lifePoints = 8000;
+        this.lifePoints = 100;
         }   
 }
 
@@ -165,85 +169,68 @@ const joey = new Duelist("Joey", joeyCards, '/images/dm03.png')
 const mai = new Duelist("Mai", maiCards, '/images/dm04.png')
 
 let characterArray = [yugi, kaiba, marik, joey, mai]
-let duelingOpponent = characterArray[Math.floor(Math.random() * 5)]   
+let duelingOpponent = characterArray[Math.floor(Math.random() * 5)]
+
+  
 
 const duel = (duelist1, duelist2) => {
     
     duelStart()
     function duelStart() {
+        
         let duelist1Cards = duelist1.cards[Math.floor(Math.random() * 5)] 
         let duelist2Cards = duelist2.cards[Math.floor(Math.random() * 5)]
-
+        
         duelist1CardImage.src = duelist1Cards.img
         duelist2CardImage.src = duelist2Cards.img
         duelist1Avatar.src = duelist1.avatar
         duelist2Avatar.src = duelist2.avatar
         duelist1AtkPanel.innerHTML = `ATK: ${duelist1Cards.attackPoints}`
         duelist2AtkPanel.innerHTML = `ATK: ${duelist2Cards.attackPoints}`
-        result1.innerHTML = `${duelist1.name} drew ${duelist1Cards.cardName}`
-        result2.innerHTML = `${duelist2.name} drew  ${duelist2Cards.cardName}`
-        battleText.innerHTML = ""
+        result1.innerHTML = ""
+        d1CardElement.src = duelist1Cards.img
+        d2CardElement.src = duelist2Cards.img
+        battleText.innerHTML = "VS"
+        result2.innerHTML = ""
         tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`;
         tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`;
-        setTimeout(battlePhase, 1800)
-        //----
-        function battlePhase() {
-            result1.innerHTML = `${duelist1.name} with ${duelist1Cards.cardName}`;
-            result2.innerHTML = `${duelist2.name} with  ${duelist2Cards.cardName}`
-            battleText.innerHTML = "Declared Battle"
-            tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`;
-            tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`;
-            setTimeout(calculation, 1800)
-        }
+        setTimeout(calculation, 1800)
+        
         function calculation() {
             let attackDifference = Math.abs(duelist1Cards.attackPoints - duelist2Cards.attackPoints)
-            console.log(duelist1.lifePoints)
-            console.log(duelist2.lifePoints)
             if (duelist1Cards.attackPoints > duelist2Cards.attackPoints) {
                 duelist2.lifePoints = duelist2.lifePoints - attackDifference; 
-                console.log(`${duelist2.name}'s LifePoints: ${duelist2.lifePoints}`);
-                console.log(`${duelist1.name}'s LifePoints: ${duelist1.lifePoints}`);
-                result1.innerHTML = `${duelist1.name} with ${duelist1Cards.cardName} beats ${duelist2Cards.cardName}. ${duelist2.name} loses -${attackDifference}`;
+                result2.innerHTML = `${duelist2.name} loses -${attackDifference} Life Points!`;
+                d2CardElement.src = ""
                 battleText.innerHTML = "";
-                result2.innerHTML = "";
+                result1.innerHTML = "";
                 tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`;
                 tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`;
                 if(duelist2.lifePoints <= 0) {
-                    tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`
-                    result1.innerHTML = `${duelist1.name} is The King of Games`
-                    result2.innerHTML = `${duelist2.name} is DEFEATED`
-                    battleText.innerHTML = ""
+                    duelist1Wins()
                 }
             } if (duelist2Cards.attackPoints > duelist1Cards.attackPoints) {
                 duelist1.lifePoints = duelist1.lifePoints - attackDifference; 
-                console.log(`${duelist1.name} LifePoints: ${duelist1.lifePoints}`)
-                console.log(`${duelist2.name}'s LifePoints: ${duelist2.lifePoints}`);
-                result1.innerHTML = `${duelist1.name}'s ${duelist1Cards.cardName} loses battle and lost -${attackDifference} Life Points`;
+                result1.innerHTML = `${duelist1.name} loses -${attackDifference} Life Points!`
                 result2.innerHTML = ""
                 battleText.innerHTML = ""
+                d1CardElement.src = ""
                 tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`;
                 tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`;
                 if(duelist1.lifePoints <= 0) {
-                    tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`
-                    result2.innerHTML = `${duelist2.name} is The King of Games`
-                    result1.innerHTML = `${duelist1.name} is DEFEATED`
-                    battleText.innerHTML = ""
+                    duelist2Wins()
                 }
             } else if (duelist1Cards.attackPoints === duelist2Cards.attackPoints) {
-                result1.innerHTML = "Draw"
-                result2.innerHTML = "Draw"
-                battleText.innerHTML = ""
+                result1.innerHTML = ""
+                result2.innerHTML = ""
+                battleText.innerHTML = "Draw!"
                 
             } else if (duelist1Cards.attackPoints > duelist2Cards.attackPoints && duelist2.lifePoints <= 0) { 
                 duelist2.lifePoints = duelist2.lifePoints - attackDifference; 
-                tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`
-                result1.innerHTML = `${duelist1.name} is The King of Games`
-                result2.innerHTML = `${duelist2.name} is DEFEATED`
+                duelist1Wins()
            } else if (duelist2Cards.attackPoints > duelist1Cards.attackPoints && duelist1.lifePoints <= 0) {
                duelist1.lifePoints = duelist1.lifePoints - attackDifference; 
-                tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`
-                result1.innerHTML = `${duelist2.name} is DEFEATED`
-                result2.innerHTML = `${duelist2.name} is The King of Games`
+               duelist2Wins()
           } if (duelist1.lifePoints > 0 && duelist2.lifePoints > 0) {
             setTimeout(duelStart, 1800)
                   
@@ -252,17 +239,60 @@ const duel = (duelist1, duelist2) => {
     }
 
     const duelist1Wins = () => {
-        tally2.innerHTML = `${duelist2.name}'s LifePoints: ${duelist2.lifePoints}`
+        tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`
         result1.innerHTML = `${duelist1.name} is The King of Games`
-        result2.innerHTML = `${duelist2.name} is DEFEATED`
+        result2.innerHTML = ""
         battleText.innerHTML = ""
+        d2CardElement.src = ""
+        d1CardElement.src = duelist1.avatar
+        d2Cover.style.display = "block"
+        d2Cover.style.background = "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8))"
+        reset()
     }
     
     const duelist2Wins = () => {
-        tally2.innerHTML = `${duelist2.name}'s LifePoints: ${duelist2.lifePoints}`
+        tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`
         result2.innerHTML = `${duelist2.name} is The King of Games`
-        result1.innerHTML = `${duelist1.name} is DEFEATED`
+        result1.innerHTML = ""
         battleText.innerHTML = ""
+        d1CardElement.src = ""
+        d2CardElement.src = duelist2.avatar
+        d1Cover.style.display = "block"
+        d1Cover.style.background = "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8))"
+        reset()
+        
+    }
+
+    function reset() {
+        const resetButton = document.createElement('button')
+        resetButton.classList.add('reset-btn')
+        resetButton.innerHTML = "Reset"
+        battleText.appendChild(resetButton)
+        
+        resetButton.addEventListener('click', () => {
+            buttonContainer.classList.remove('hide')
+            d1Panel.style.display ="none"
+            d2Panel.style.display ="none"
+            d1Cover.style.display = "none"
+            d2Cover.style.display = "none"
+            result1.innerHTML = ""
+            result2.innerHTML = ""
+            battleText.removeChild(resetButton)
+            logo.style.display = "block"
+            d1CardElement.src = ""
+            d2CardElement.src = ""
+            startGame()
+        })
+    }
+
+    function startGame() {
+        buttonContainer.classList.remove('hide')
+        d1Panel.style.display ="none"
+        d2Panel.style.display ="none"
+        duelist1.lifePoints = 8000
+        duelist2.lifePoints = 8000
+        d1CardElement.src = ""
+        d2CardElement.src = ""
     }
 }
 
@@ -279,6 +309,8 @@ function displayPoints() {
     d2Panel.style.display ="flex"
 }
 
+
+
 const startBtns = [startYugi, startKaiba, startMarik, startJoey, startMai]
 
 startBtns.forEach((btn, i) => {
@@ -288,6 +320,7 @@ startBtns.forEach((btn, i) => {
                 characterArray.pop(opponent)
                 opponent = characterArray[Math.floor(Math.random() * 4)]
             }
+            logo.style.display = "none"
             duel(player, opponent)
             displayPoints()
         })

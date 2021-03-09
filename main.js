@@ -1,9 +1,5 @@
-const startYugi = document.getElementById('yugi-btn')
-const startKaiba = document.getElementById('kaiba-btn')
-const startMarik = document.getElementById('marik-btn')
-const startJoey = document.getElementById('joey-btn')
-const startMai = document.getElementById('mai-btn')
-let buttonContainer = document.querySelector('.button-container')
+const startBtns = Array.from(document.querySelectorAll('[data-button]'))
+const buttonContainer = document.querySelector('.button-container')
 let duelist1CardImage = document.getElementById('duelist1-card')
 let duelist2CardImage = document.getElementById('duelist2-card')
 let duelist1AtkPanel = document.getElementById("duelist1-panel-atk")
@@ -204,9 +200,7 @@ const duel = (duelist1, duelist2) => {
                 result1.innerHTML = "";
                 tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`;
                 tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`;
-                if(duelist2.lifePoints <= 0) {
-                    duelist1Wins()
-                }
+                setTimeout(checkForWin, 1000)
             } if (duelist2Cards.attackPoints > duelist1Cards.attackPoints) {
                 duelist1.lifePoints = duelist1.lifePoints - attackDifference; 
                 result1.innerHTML = `${duelist1.name} loses -${attackDifference} Life Points!`
@@ -215,25 +209,24 @@ const duel = (duelist1, duelist2) => {
                 d1CardElement.src = ""
                 tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`;
                 tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`;
-                if(duelist1.lifePoints <= 0) {
-                    duelist2Wins()
-                }
+                setTimeout(checkForWin, 1000)
             } else if (duelist1Cards.attackPoints === duelist2Cards.attackPoints) {
                 result1.innerHTML = ""
                 result2.innerHTML = ""
                 battleText.innerHTML = "Draw!"
-                
-            } else if (duelist1Cards.attackPoints > duelist2Cards.attackPoints && duelist2.lifePoints <= 0) { 
-                duelist2.lifePoints = duelist2.lifePoints - attackDifference; 
-                duelist1Wins()
-           } else if (duelist2Cards.attackPoints > duelist1Cards.attackPoints && duelist1.lifePoints <= 0) {
-               duelist1.lifePoints = duelist1.lifePoints - attackDifference; 
-               duelist2Wins()
-          } if (duelist1.lifePoints > 0 && duelist2.lifePoints > 0) {
-            setTimeout(duelStart, 1800)
-                  
-            } 
+                setTimeout(checkForWin, 1000)   
+            }
         } 
+    }
+
+    const checkForWin = () => {
+        if(duelist2.lifePoints <= 0) {
+            duelist1Wins()
+        } else if (duelist1.lifePoints <= 0) {
+            duelist2Wins()
+        } else {
+            setTimeout(duelStart, 1800)
+        }
     }
 
     const duelist1Wins = () => {
@@ -299,8 +292,6 @@ function displayPoints() {
     d1Panel.style.display ="flex"
     d2Panel.style.display ="flex"
 }
-
-const startBtns = [startYugi, startKaiba, startMarik, startJoey, startMai]
 
 startBtns.forEach((btn, i) => {
     function playerSelect(player, opponent) {    

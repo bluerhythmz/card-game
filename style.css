@@ -87,8 +87,8 @@ body {
 }
 
 .display-panel-lp {
-    max-height: 100%;
-    max-width: 100%;
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,9 +112,10 @@ body {
 }
 
 .lp-avatar {
+    max-height: 100%;
     display: block;
     min-width: 10%;
-    max-width: 12%;
+    max-width: 100%;
     margin: 0 auto;
     margin-top: 0rem;
     border: 4px solid silver;
@@ -277,37 +278,40 @@ h1 {
 
     .display-panel {
         display: none;
-        position: absolute;
+        justify-content: space-around;
+        align-items: center;
         flex-direction: row;
-        height: 20%;
+        position: absolute;
+        top: 0;
+        height: 15%;
         max-height: 100%;
+        width: 100%;
         max-width: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0.74)), url(/images/background2.jpg);
+        background: linear-gradient(135deg,rgb(0, 0, 100), rgb(0, 0, 30))
     }
     .player-one {
         top: 0;
     }
     
     .player-two {
-        top: 80%;
+        top: 85%;
     }
     .display-panel-image {
-        max-height: 100%;
-        max-width: 20%;
+        height: 100%;
+        width: 45%;
     }
     
     .image {
-        
+        height: 100%;
         max-width: 100%;
         
         /* width: 80%; */
-        margin: 0 auto;
         margin-top: 0rem;
         display: block;
     }
     .display-panel-info {
-        max-height: 50%;
-        max-width: 100%;
+        height: 100%;
+        width: 45%;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -324,8 +328,8 @@ h1 {
     }
     
     .display-panel-lp {
-        min-width: 30%;
-        max-height: 30%;
+        width: 100%;
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -336,14 +340,14 @@ h1 {
         color: white;
         font-size: 2rem;
         font-weight: 500;
+        margin-right: 0;
     }
     
     .lp-avatar {
         display: block;
-        max-height: 10%;
-        max-width: 70%;
+        height: 100%;
+        min-width: 50%;
         margin: 0 auto;
-        margin-top: 1rem;
     }
     .duel-moves {
         max-height: 40rem;
@@ -382,7 +386,7 @@ h1 {
         margin: 1rem;
     }
     #logo {
-        height: 5vh;
+        height: 15vh;
         margin-top: 5rem;
     }
     .btn {

@@ -168,7 +168,7 @@ function displayPoints() {
 startBtns.forEach((btn, i) => {
     function playerSelect(player, opponent) {    
         btn.addEventListener('click', () => {
-            if (player === opponent) {
+            while (player === opponent) {
                 duelistArray.pop(opponent)
                 opponent = duelistArray[Math.floor(Math.random() * 4)]
             }

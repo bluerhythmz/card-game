@@ -1,3 +1,5 @@
+import { yugiCards, kaibaCards, joeyCards, marikCards, maiCards } from './cards.js'
+
 const startBtns = Array.from(document.querySelectorAll('[data-button]'))
 const buttonContainer = document.querySelector('.button-container')
 let d1Panel = document.getElementById('d1Panel')
@@ -5,137 +7,6 @@ let d2Panel = document.getElementById('d2Panel')
 let logo = document.getElementById('logo')
 let d1Cover = document.querySelector('#d1-cover')
 let d2Cover = document.querySelector('#d2-cover')
-
-
-let yugiCards = [{
-    cardName: "Dark Magician",
-    attackPoints: 2500,
-    img: "/images/cardimages/dark magician.jpg"
-},
-{
-    cardName: "Dark Magician Girl",
-    attackPoints: 2000,
-    img: "/images/cardimages/dark magician girl.jpg"
-},
-{
-    cardName: "Celtic Guardian",
-    attackPoints: 1400,
-    img: "/images/cardimages/celtic guardian.jpg"
-},
-{
-    cardName: "Buster Blader",
-    attackPoints: 2600,
-    img: "/images/cardimages/buster blader.jpg"
-},
-{
-    cardName: "Dark Magician The Dragon Knight",
-    attackPoints: 3000,
-    img: "/images/cardimages/dark magician the dragon knight.jpg"
-}]
-
-let kaibaCards = [{
-    cardName: "Blue Eyes White Dragon",
-    attackPoints: 3000,
-    img: "/images/cardimages/blue eyes white dragon.jpg"
-},
-{
-    cardName: "Battle Ox",
-    attackPoints: 1700,
-    img: "/images/cardimages/battle ox.jpg"
-},
-{
-    cardName: "Lord of D",
-    attackPoints: 1200,
-    img: "/images/cardimages/lord of d.jpg"
-},
-{
-    cardName: "Kaiser Vorse Raider",
-    attackPoints: 1900,
-    img: "/images/cardimages/kaiser vorse raider.jpg"
-},
-{
-    cardName: "Dragon Spirit of White",
-    attackPoints: 2500,
-    img: "/images/cardimages/dragon spirit of white.jpg"
-}];
-
-let joeyCards = [{
-    cardName: "Red Eyes Black Dragon",
-    attackPoints: 2400,
-    img: "/images/cardimages/red eyes black dragon.jpg"
-},
-{
-    cardName: "Gearfried The Iron Knight",
-    attackPoints: 1800,
-    img: "/images/cardimages/gearfried.jpg"
-},
-{
-    cardName: "Gilford The Lightning",
-    attackPoints: 2800,
-    img: "/images/cardimages/gilford the lightning.jpg"
-},
-{
-    cardName: "Axe Raider",
-    attackPoints: 1700,
-    img: "/images/cardimages/axe raider.jpg"
-},
-{
-    cardName: "Black Skull Dragon",
-    attackPoints: 3200,
-    img: "/images/cardimages/black skull dragon.jpg"
-}];
-
-let marikCards = [{
-    cardName: "Revival Jam",
-    attackPoints: 1500,
-    img: "/images/cardimages/revival jam.jpg"
-},
-{
-    cardName: "Masked Beast Des Gardius",
-    attackPoints: 3300,
-    img: "/images/cardimages/masked beast.jpg"
-},
-{
-    cardName: "Helpoemer",
-    attackPoints: 2000,
-    img: "/images/cardimages/helpoemer.jpg"
-},
-{
-    cardName: "Lava Golem",
-    attackPoints: 3000,
-    img: "/images/cardimages/lava golem.jpg"
-},
-{
-    cardName: "Legendary Fiend",
-    attackPoints: 1500,
-    img: "/images/cardimages/legendary fiend.jpg"
-}];
-
-let maiCards = [{
-    cardName: "Cyber Harpie Lady",
-    attackPoints: 1800,
-    img: "/images/cardimages/cyber harpie.jpg"
-},
-{
-    cardName: "Cyber Slash Harpie Lady",
-    attackPoints: 2600,
-    img: "/images/cardimages/cyber slash harpie.jpg"
-},
-{
-    cardName: "Harpie Queen",
-    attackPoints: 1900,
-    img: "/images/cardimages/harpie queen.jpg"
-},
-{
-    cardName: "Harpie's Pet Dragon",
-    attackPoints: 2000,
-    img: "/images/cardimages/harpies pet dragon.jpg"
-},
-{
-    cardName: "Dunames Dark Witch",
-    attackPoints: 1800,
-    img: "/images/cardimages/dunames dark witch.jpg"
-}];
 
 class Duelist {
     constructor(name, _cards, avatar) {
@@ -164,11 +35,11 @@ const duel = (duelist1, duelist2) => {
     let duelist2Avatar = document.getElementById("duelist2-avatar")
     let duelist1CardImage = document.getElementById('duelist1-card')
     let duelist2CardImage = document.getElementById('duelist2-card')
-    let result1 = document.getElementById('result1');
-    let result2 = document.getElementById('result2');
-    let battleText = document.getElementById('battleText');
-    let tally1 = document.getElementById("duelist1-lp");
-    let tally2 = document.getElementById("duelist2-lp");
+    let result1 = document.getElementById('result1')
+    let result2 = document.getElementById('result2')
+    let battleText = document.getElementById('battleText')
+    let tally1 = document.getElementById("duelist1-lp")
+    let tally2 = document.getElementById("duelist2-lp")
 
     duelStart()
     function duelStart() {
@@ -187,8 +58,8 @@ const duel = (duelist1, duelist2) => {
         d2FieldCardElement.src = duelist2Cards.img
         battleText.innerHTML = "VS"
         result2.innerHTML = ""
-        tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`;
-        tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`;
+        tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`
+        tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`
         setTimeout(calculation, 1800)
         
         function calculation() {
@@ -197,10 +68,10 @@ const duel = (duelist1, duelist2) => {
                 duelist2.lifePoints = duelist2.lifePoints - attackDifference; 
                 result2.innerHTML = `${duelist2.name} loses -${attackDifference} Life Points!`;
                 d2FieldCardElement.src = ""
-                battleText.innerHTML = "";
-                result1.innerHTML = "";
-                tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`;
-                tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`;
+                battleText.innerHTML = ""
+                result1.innerHTML = ""
+                tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`
+                tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`
                 setTimeout(checkForWin, 1000)
             } if (duelist2Cards.attackPoints > duelist1Cards.attackPoints) {
                 duelist1.lifePoints = duelist1.lifePoints - attackDifference; 

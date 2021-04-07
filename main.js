@@ -65,22 +65,59 @@ const duel = (duelist1, duelist2) => {
         function calculation() {
             let attackDifference = Math.abs(duelist1Cards.attackPoints - duelist2Cards.attackPoints)
             if (duelist1Cards.attackPoints > duelist2Cards.attackPoints) {
-                duelist2.lifePoints = duelist2.lifePoints - attackDifference; 
+               
+                let finalVal = duelist2.lifePoints - attackDifference;
+                let decrement = 50 
                 result2.innerHTML = `${duelist2.name} loses -${attackDifference} Life Points!`;
                 d2FieldCardElement.src = ""
                 battleText.innerHTML = ""
                 result1.innerHTML = ""
-                tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`
-                tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`
+                console.log(duelist2.lifePoints)
+                console.log(finalVal)
+                const counterDecrementer = () => {
+                    if (duelist2.lifePoints > finalVal) {
+                        tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`
+                        tally2.innerHTML = `${duelist2.name}: ${Math.ceil(duelist2.lifePoints -= decrement)}`
+                        setTimeout(counterDecrementer, 1)
+                    } else {
+                        duelist2.lifePoints = finalVal
+                        tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`
+                        tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`
+                    }
+                }
+                counterDecrementer()
+                
                 setTimeout(checkForWin, 1000)
+                
             } if (duelist2Cards.attackPoints > duelist1Cards.attackPoints) {
-                duelist1.lifePoints = duelist1.lifePoints - attackDifference; 
+                /* duelist1.lifePoints = duelist1.lifePoints - attackDifference; 
                 result1.innerHTML = `${duelist1.name} loses -${attackDifference} Life Points!`
                 result2.innerHTML = ""
                 battleText.innerHTML = ""
                 d1FieldCardElement.src = ""
                 tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`;
                 tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`;
+                setTimeout(checkForWin, 1000) */
+                let finalVal2 = duelist1.lifePoints - attackDifference;
+                let decrement2 = 50 
+                result1.innerHTML = `${duelist1.name} loses -${attackDifference} Life Points!`;
+                d1FieldCardElement.src = ""
+                battleText.innerHTML = ""
+                result2.innerHTML = ""
+               
+                const counterDecrementer2 = () => {
+                    if (duelist1.lifePoints > finalVal2) {
+                        tally1.innerHTML = `${duelist1.name}: ${Math.ceil(duelist1.lifePoints -= decrement2)}`
+                        tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`
+                        setTimeout(counterDecrementer2, 1)
+                    } else {
+                        duelist1.lifePoints = finalVal2
+                        tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`
+                        tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`
+                    }
+                }
+                counterDecrementer2()
+                
                 setTimeout(checkForWin, 1000)
             } else if (duelist1Cards.attackPoints === duelist2Cards.attackPoints) {
                 result1.innerHTML = ""

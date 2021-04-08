@@ -67,7 +67,7 @@ const duel = (duelist1, duelist2) => {
             if (duelist1Cards.attackPoints > duelist2Cards.attackPoints) {
                
                 let finalVal = duelist2.lifePoints - attackDifference;
-                let decrement = 50 
+                let decrement = 25
                 result2.innerHTML = `${duelist2.name} loses -${attackDifference} Life Points!`;
                 d2FieldCardElement.src = ""
                 battleText.innerHTML = ""
@@ -78,7 +78,7 @@ const duel = (duelist1, duelist2) => {
                     if (duelist2.lifePoints > finalVal) {
                         tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`
                         tally2.innerHTML = `${duelist2.name}: ${Math.ceil(duelist2.lifePoints -= decrement)}`
-                        setTimeout(counterDecrementer, 1)
+                        setTimeout(counterDecrementer, 10)
                     } else {
                         duelist2.lifePoints = finalVal
                         tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`
@@ -99,7 +99,7 @@ const duel = (duelist1, duelist2) => {
                 tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`;
                 setTimeout(checkForWin, 1000) */
                 let finalVal2 = duelist1.lifePoints - attackDifference;
-                let decrement2 = 50 
+                let decrement2 = 25
                 result1.innerHTML = `${duelist1.name} loses -${attackDifference} Life Points!`;
                 d1FieldCardElement.src = ""
                 battleText.innerHTML = ""

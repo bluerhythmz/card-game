@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 html {
@@ -39,7 +38,6 @@ body {
     height: 12%;
     max-height: 100%;
     width: 100%;
-    max-width: 100%;
     background: linear-gradient(135deg,rgb(0, 0, 100), rgb(0, 0, 30))
 }
 
@@ -62,7 +60,8 @@ body {
 }
 
 .image {
-    max-width: 10%;
+    height: 100%;
+    max-width: 25%;
     margin: 0 auto;
     margin-top: 0rem;
     display: block;
@@ -81,7 +80,6 @@ body {
     font-size: 5rem;
     font-weight: 400;
     color: white;
-    padding: 3rem 2rem;
     border-radius: 6px;
     margin-bottom: 0rem;
 }
@@ -108,7 +106,6 @@ body {
     color: white;
     font-size: 6rem;
     font-weight: 500;
-    margin-right: 4rem;
 }
 
 .lp-avatar {
@@ -123,10 +120,9 @@ body {
 }
 
 .duel-moves {
-    max-height: 40rem;
-    min-width: 35%;
+    min-width: 45%;
     max-width: 60%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -135,12 +131,14 @@ body {
 }
 
 #duelist1-monster {
-    max-width: 60%;
+    height: 100%;
+    max-width: 50%;
     display: block;
 }
 
 #duelist2-monster {
-    max-width: 60%;
+    height: 100%;
+    max-width: 50%;
     display: block;
 }
 
@@ -292,14 +290,11 @@ body {
 
     .display-panel {
         display: none;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         flex-direction: row;
         position: absolute;
         height: 15%;
-        max-height: 100%;
-        width: 100%;
-        max-width: 100%;
         background: linear-gradient(135deg,rgb(0, 0, 100), rgb(0, 0, 30))
     }
     .player-one {
@@ -310,8 +305,9 @@ body {
         bottom: 0;
     }
     .display-panel-image {
-        height: 100%;
+        height: 90%;
         width: 45%;
+        margin-left: .2rem;
     }
     
     .image {
@@ -320,6 +316,7 @@ body {
         
         /* width: 80%; */
         margin-top: 0rem;
+        margin-right: 2rem;
         display: block;
     }
     .display-panel-info {
@@ -335,7 +332,6 @@ body {
         font-size: 2rem;
         font-weight: 400;
         color: white;
-        padding: 3rem 2rem;
         border-radius: 6px;
         margin-bottom: 0rem;
     }
@@ -343,6 +339,7 @@ body {
     .display-panel-lp {
         width: 100%;
         height: 100%;
+        margin-right: .3rem;
         display: flex;
         justify-content: center;
         align-items: center;

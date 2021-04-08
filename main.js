@@ -7,6 +7,7 @@ let d2Panel = document.getElementById('d2Panel')
 let logo = document.getElementById('logo')
 let d1Cover = document.querySelector('#d1-cover')
 let d2Cover = document.querySelector('#d2-cover')
+let duelMoves = document.querySelector('.duel-moves')
 
 class Duelist {
     constructor(name, _cards, avatar) {
@@ -46,7 +47,7 @@ const duel = (duelist1, duelist2) => {
         
         let duelist1Cards = duelist1.cards[Math.floor(Math.random() * 5)] 
         let duelist2Cards = duelist2.cards[Math.floor(Math.random() * 5)]
-        
+        duelMoves.style.display = "flex"
         duelist1CardImage.src = duelist1Cards.img
         duelist2CardImage.src = duelist2Cards.img
         duelist1Avatar.src = duelist1.avatar
@@ -193,6 +194,7 @@ const duel = (duelist1, duelist2) => {
         duelist2.lifePoints = 8000
         d1FieldCardElement.src = ""
         d2FieldCardElement.src = ""
+        duelMoves.style.display = "none"
     }
 }
 

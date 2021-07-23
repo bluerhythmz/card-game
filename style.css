@@ -17,7 +17,7 @@ body {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(rgba(0, 0, 0, 0.568),rgba(0, 0, 0, 0.541)),url(/images/background.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.568),rgba(0, 0, 0, 0.541)),url(./images/background.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
@@ -222,35 +222,35 @@ body {
 }
 
 .btn__yugi {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/dm01.png');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/dm01.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn__kaiba {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/dm02.png');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/dm02.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn__marik {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/dm10.png');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/dm10.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn__joey {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/dm03.png');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/dm03.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn__mai{
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/dm04.png');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/dm04.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

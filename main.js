@@ -1,9 +1,5 @@
 import {
-  yugiCards,
-  kaibaCards,
-  joeyCards,
-  marikCards,
-  maiCards,
+  decks
 } from "./cards.js";
 
 const startBtns = Array.from(document.querySelectorAll("[data-button]"));
@@ -43,11 +39,11 @@ const field = {
   },
 };
 
-const yugi = new Duelist("Yugi", yugiCards, "./images/dm01.png");
-const kaiba = new Duelist("Kaiba", kaibaCards, "./images/dm02.png");
-const marik = new Duelist("Marik", marikCards, "./images/dm10.png");
-const joey = new Duelist("Joey", joeyCards, "./images/dm03.png");
-const mai = new Duelist("Mai", maiCards, "./images/dm04.png");
+const yugi = new Duelist("Yugi", decks.yugiCards, "./images/dm01.png");
+const kaiba = new Duelist("Kaiba", decks.kaibaCards, "./images/dm02.png");
+const marik = new Duelist("Marik", decks.marikCards, "./images/dm10.png");
+const joey = new Duelist("Joey", decks.joeyCards, "./images/dm03.png");
+const mai = new Duelist("Mai", decks.maiCards, "./images/dm04.png");
 
 let duelistArray = [yugi, kaiba, marik, joey, mai];
 let duelingOpponent = duelistArray[Math.floor(Math.random() * 5)];
@@ -98,8 +94,6 @@ const duel = (duelist1, duelist2) => {
         field.playerTwoField.card.src = "";
         battleText.innerHTML = "";
         field.playerOneField.battleResultElement.innerHTML = "";
-        console.log(duelist2.lifePoints);
-        console.log(finalVal);
         const counterDecrementer = () => {
           if (duelist2.lifePoints > finalVal) {
             field.playerOneField.lifePointsElement.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`;

@@ -16,7 +16,7 @@ class Duelist {
     this.name = name;
     this.cards = _cards;
     this.avatar = avatar;
-    this.lifePoints = 1000;
+    this.lifePoints = 8000;
   }
 }
 
@@ -49,18 +49,6 @@ let duelistArray = [yugi, kaiba, marik, joey, mai];
 let duelingOpponent = duelistArray[Math.floor(Math.random() * 5)];
 
 const duel = (duelist1, duelist2) => {
-  /* let d1FieldCardElement = document.getElementById('duelist1-monster')
-    let d2FieldCardElement = document.getElementById('duelist2-monster')
-    let duelist1AtkPanel = document.getElementById("duelist1-panel-atk")
-    let duelist2AtkPanel = document.getElementById("duelist2-panel-atk")
-    let duelist1Avatar = document.getElementById("duelist1-avatar")
-    let duelist2Avatar = document.getElementById("duelist2-avatar")
-    let duelist1CardImage = document.getElementById('duelist1-card')
-    let duelist2CardImage = document.getElementById('duelist2-card')
-    let result1 = document.getElementById('result1')
-    let result2 = document.getElementById('result2')
-    let tally1 = document.getElementById("duelist1-lp")
-    let tally2 = document.getElementById("duelist2-lp") */
   let battleText = document.getElementById("battleText");
 
   duelStart();
@@ -112,14 +100,6 @@ const duel = (duelist1, duelist2) => {
         setTimeout(checkForWin, 1000);
       }
       if (duelist2Cards.attackPoints > duelist1Cards.attackPoints) {
-        /* duelist1.lifePoints = duelist1.lifePoints - attackDifference; 
-                result1.innerHTML = `${duelist1.name} loses -${attackDifference} Life Points!`
-                result2.innerHTML = ""
-                battleText.innerHTML = ""
-                d1FieldCardElement.src = ""
-                tally1.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`;
-                tally2.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`;
-                setTimeout(checkForWin, 1000) */
         let finalVal2 = duelist1.lifePoints - attackDifference;
         let decrement2 = 25;
         field.playerOneField.battleResultElement.innerHTML = `${duelist1.name} loses -${attackDifference} Life Points!`;

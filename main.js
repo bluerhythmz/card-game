@@ -1,22 +1,22 @@
-import {
-  decks
-} from "./cards.js";
+import { decks } from "./cards.js";
 
 const startBtns = Array.from(document.querySelectorAll("[data-button]"));
-const buttonContainer = document.querySelector(".button-container");
+const buttonContainer = document.querySelector(".container");
 let d1Panel = document.getElementById("d1Panel");
 let d2Panel = document.getElementById("d2Panel");
 let logo = document.getElementById("logo");
 let d1Cover = document.querySelector("#d1-cover");
 let d2Cover = document.querySelector("#d2-cover");
 let duelMoves = document.querySelector(".duel-moves");
+let introScreen = document.querySelector(".intro-screen");
+let gameScreen = document.querySelector(".game-screen");
 
 class Duelist {
   constructor(name, _cards, avatar) {
     this.name = name;
     this.cards = _cards;
     this.avatar = avatar;
-    this.lifePoints = 8000;
+    this.lifePoints = 1000;
   }
 }
 
@@ -97,9 +97,9 @@ const duel = (duelist1, duelist2) => {
         const counterDecrementer = () => {
           if (duelist2.lifePoints > finalVal) {
             field.playerOneField.lifePointsElement.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`;
-            field.playerTwoField.lifePointsElement.innerHTML = `${duelist2.name}: ${Math.ceil(
-              (duelist2.lifePoints -= decrement)
-            )}`;
+            field.playerTwoField.lifePointsElement.innerHTML = `${
+              duelist2.name
+            }: ${Math.ceil((duelist2.lifePoints -= decrement))}`;
             setTimeout(counterDecrementer, 10);
           } else {
             duelist2.lifePoints = finalVal;
@@ -129,9 +129,9 @@ const duel = (duelist1, duelist2) => {
 
         const counterDecrementer2 = () => {
           if (duelist1.lifePoints > finalVal2) {
-            field.playerOneField.lifePointsElement.innerHTML = `${duelist1.name}: ${Math.ceil(
-              (duelist1.lifePoints -= decrement2)
-            )}`;
+            field.playerOneField.lifePointsElement.innerHTML = `${
+              duelist1.name
+            }: ${Math.ceil((duelist1.lifePoints -= decrement2))}`;
             field.playerTwoField.lifePointsElement.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`;
             setTimeout(counterDecrementer2, 1);
           } else {
@@ -204,6 +204,8 @@ const duel = (duelist1, duelist2) => {
       field.playerTwoField.battleResultElement.innerHTML = "";
       battleText.removeChild(resetButton);
       logo.style.display = "block";
+      introScreen.style.display = "flex"
+      gameScreen.style.display = "none"
       field.playerOneField.card.src = "";
       field.playerTwoField.card.src = "";
       startGame();
@@ -236,6 +238,8 @@ startBtns.forEach((btn, i) => {
         opponent = duelistArray[Math.floor(Math.random() * 4)];
       }
       logo.style.display = "none";
+      introScreen.style.display = "none"
+      gameScreen.style.display = "flex"
       duel(player, opponent);
       displayPoints();
     });

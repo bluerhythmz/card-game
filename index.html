@@ -7,11 +7,11 @@
     <title>Yu-Gi-Oh Auto Dueler</title>
   </head>
   <body>
-    <div class="intro">
+    <div class="intro-screen">
       <img id="logo" src="./images/logo.png" alt="logo" />
-      <div class="button-container">
+      <div class="container">
         <h3 class="button-title">Choose Your Character</h3>
-        <div class="button-wrapper">
+        <div class="button-list">
           <button data-button class="btn btn__yugi" type="button"></button>
           <button data-button class="btn btn__kaiba" type="button"></button>
           <button data-button class="btn btn__marik" type="button"></button>
@@ -20,12 +20,12 @@
         </div>
       </div>
     </div>
-    <main>
-      <div id="d1Panel" class="display-panel player-one">
+    <main class="game-screen">
+      <div id="d1Panel" class="lifebar player-one">
         <div id="d1-cover" class="display-cover"></div>
-        <div class="display-panel-image">
-          <img id="duelist1-card" src="" class="image" alt="" />
-          <h2 id="duelist1-panel-atk" class="display-panel-atkpoints"></h2>
+        <div class="lifebar__card-info">
+          <img id="duelist1-card" src="" class="lifebar__card-image" alt="" />
+          <h2 id="duelist1-panel-atk" class="lifebar__atk-points"></h2>
         </div>
         <div class="display-panel-info">
           <div class="display-panel-lp">
@@ -35,17 +35,17 @@
         </div>
       </div>
       <div class="duel-moves">
-        <div id="result1"></div>
-        <img id="duelist1-monster" src="" alt="" />
+        <div id="result1" class="result-text"></div>
+        <img class="monster-card" id="duelist1-monster" src="" alt="" />
         <div id="battleText"></div>
-        <div id="result2"></div>
-        <img id="duelist2-monster" src="" alt="" />
+        <div id="result2" class="result-text"></div>
+        <img class="monster-card" id="duelist2-monster" src="" alt="" />
       </div>
-      <div id="d2Panel" class="display-panel player-two">
+      <div id="d2Panel" class="lifebar player-two">
         <div id="d2-cover" class="display-cover"></div>
-        <div class="display-panel-image">
-          <img id="duelist2-card" src="" class="image" alt="" />
-          <h2 id="duelist2-panel-atk" class="display-panel-atkpoints"></h2>
+        <div class="lifebar__card-info">
+          <img id="duelist2-card" src="" class="lifebar__card-image" alt="" />
+          <h2 id="duelist2-panel-atk" class="lifebar__atk-points"></h2>
         </div>
         <div class="display-panel-info">
           <div class="display-panel-lp">

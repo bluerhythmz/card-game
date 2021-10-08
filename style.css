@@ -1,443 +1,325 @@
-@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: 'Goldman', cursive;
-    font-size: 62.5%;
+  font-family: "Goldman", cursive;
+  font-size: 62.5%;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(rgba(0, 0, 0, 0.568),rgba(0, 0, 0, 0.541)),url(./images/background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.568), rgba(0, 0, 0, 0.541)),
+    url(./images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 #logo {
-    height: 20rem;
+  height: 20rem;
 }
 
-.intro {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
+.intro-screen {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100%;
 }
 
-main {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
-    display: grid;
-    grid-template-areas:
-    "one"
-    "duel"
-    "two"
-    ;
+.game-screen {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
 }
 
-.display-panel {
-    display: none;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    height: 12rem;
-    background: linear-gradient(135deg,rgb(0, 0, 100), rgb(0, 0, 30))
+.lifebar {
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 12rem;
+  background: linear-gradient(135deg, rgb(0, 0, 100), rgb(0, 0, 30));
+  position: relative;
 }
 
-/* .player-one {
-    top: 0;
-    left: 0;
+.lifebar__card-info {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.player-two {
-    bottom: 0;
-    right: 0;
-} */
-
-.player-one {
-    grid-area: one;
-}
-
-.player-one {
-    grid-area: two;
-}
-
-.display-panel-image {
-    height: 100%;
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image {
-    height: 100%;
-    max-width: 25%;
-    margin: 0 auto;
-    margin-top: 0rem;
-    display: block;
+.lifebar__card-image {
+  height: 100%;
+  max-width: 25%;
+  margin: 0 auto;
+  display: block;
 }
 
 .display-panel-info {
-    height: 100%;
-    width: 40%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
 }
 
-.display-panel-atkpoints {
-    font-size: 5rem;
-    font-weight: 400;
-    color: white;
-    border-radius: 6px;
-    margin-bottom: 0rem;
+.lifebar__atk-points {
+  font-size: 5rem;
+  font-weight: 400;
+  color: white;
+  border-radius: 6px;
+  margin-bottom: 0rem;
 }
 
 .display-panel-lp {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 .display-cover {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    transition: all 1.5s ease;
-    opacity: 1;
-    display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transition: all 1.5s ease;
+  opacity: 1;
+  display: none;
 }
 
 .life-points {
-    color: white;
-    font-size: 6rem;
-    font-weight: 500;
+  color: white;
+  font-size: 6rem;
+  font-weight: 500;
 }
 
 .lp-avatar {
-    max-height: 100%;
-    display: block;
-    min-width: 10%;
-    max-width: 100%;
-    margin: 0 auto;
-    margin-top: 0rem;
-    border: 4px solid silver;
-    border-radius: 3px;
+  max-height: 100%;
+  display: block;
+  min-width: 10%;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 0rem;
+  border: 4px solid silver;
+  border-radius: 3px;
 }
 
 .duel-moves {
-   /*  min-width: 45%;
-    max-width: 60%; */
-    grid-area: duel;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0 auto;
-    margin-bottom: 0rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 0rem;
 }
 
-#duelist1-monster {
-    height: 100%;
-    max-width: 20%;
-    display: block;
+.monster-card {
+  height: 100%;
+  max-width: 50%;
+  display: block;
 }
 
-#duelist2-monster {
-    height: 100%;
-    max-width: 20%;
-    display: block;
+.result-text {
+  font-size: 5rem;
 }
 
 #result1 {
-    color: rgb(0, 228, 197);
-    font-size: 4rem;
+  color: rgb(0, 228, 197);
 }
 
 #result2 {
-    color: rgb(72, 52, 253);
-    font-size: 4rem;
+  color: rgb(72, 52, 253);
 }
 
 #battleText {
-    color: rgb(41, 0, 155);
-    font-size: 5rem;
-    margin: 3rem;
-    text-shadow: 1px 3px  silver;
+  color: rgb(41, 0, 155);
+  font-size: 5rem;
+  margin: 3rem;
+  text-shadow: 1px 3px silver;
 }
 
 .points-container {
-    display: flex;
-    height: 10%;
-    width: 90%;
-    justify-content: center;
-    display: none;
+  display: flex;
+  height: 10%;
+  width: 90%;
+  justify-content: center;
+  display: none;
 }
 
-.button-container {
-    max-width: 100%;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.774);
-    height: 40rem;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-top: 5px solid rgb(101, 149, 253);
-    border-bottom: 5px solid rgb(101, 149, 253);
+.container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.774);
+  padding: 8rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: 5px solid rgb(101, 149, 253);
+  border-bottom: 5px solid rgb(101, 149, 253);
 }
 
-.button-wrapper {
-    margin-top: 6rem;
+.button-list {
+  margin-top: 6rem;
 }
 
 .button-title {
-    cursor: default;
-    color: rgb(101, 149, 253);
-    text-shadow: .2rem .2rem rgba(255, 217, 0, 0.856);
-    font-size: 4rem;
-    margin-top: -5rem;
+  cursor: default;
+  color: rgb(101, 149, 253);
+  text-shadow: 0.2rem 0.2rem rgba(255, 217, 0, 0.856);
+  font-size: 4rem;
+  margin-top: -5rem;
 }
 
 .btn {
-    height: 15rem;
-    width: 12rem;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 5rem 3.5rem;
-    font-size: 3rem;
-    border-radius: 10px;
-    border: 5px solid black;
-    box-shadow: 0.5px 0.5px 10px rgb(101, 149, 253);
-    color: goldenrod;
-    text-shadow: 5px 1px 1px rgb(0, 0, 0);
-    cursor: pointer;
-    margin: 0 2rem;
-    transition: all 0.2s ease;
+  height: 15rem;
+  width: 12rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 5rem 3.5rem;
+  font-size: 3rem;
+  border-radius: 10px;
+  border: 5px solid black;
+  box-shadow: 0.5px 0.5px 10px rgb(101, 149, 253);
+  text-shadow: 5px 1px 1px rgb(0, 0, 0);
+  cursor: pointer;
+  margin: 0 2rem;
+  transition: all 0.2s ease;
 }
 
 .btn:hover {
-    color: gold;
-    box-shadow: 1px 1px 20px gold;
+  color: gold;
+  box-shadow: 1px 1px 20px gold;
 }
 
 .btn:focus {
-    outline: none;
+  outline: none;
 }
 
 .btn:active {
-    padding: 19px 30px;
+  padding: 19px 30px;
 }
 
 .btn__yugi {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/dm01.png');  
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("./images/dm01.png");
 }
 
 .btn__kaiba {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/dm02.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("./images/dm02.png");
 }
 
 .btn__marik {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/dm10.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("./images/dm10.png");
 }
 
 .btn__joey {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/dm03.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("./images/dm03.png");
 }
 
-.btn__mai{
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/dm04.png');
+.btn__mai {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("./images/dm04.png");
 }
 
 .reset-btn {
-    padding: 1rem 2.5rem;
-    font-size: 3rem;
-    border-radius: 10px;
-    border: 5px solid black;
-    box-shadow: 0.5px 0.5px 10px rgb(101, 149, 253);
-    color: goldenrod;
-    text-shadow: 5px 1px 1px rgb(0, 0, 0);
-    cursor: pointer;
-    margin: 0 2rem;
-    transition: all 0.2s ease;
-    background-color: blue;
+  padding: 1rem 2.5rem;
+  font-size: 3rem;
+  border-radius: 10px;
+  border: 5px solid black;
+  box-shadow: 0.5px 0.5px 10px rgb(101, 149, 253);
+  color: goldenrod;
+  text-shadow: 5px 1px 1px rgb(0, 0, 0);
+  cursor: pointer;
+  margin: 0 2rem;
+  transition: all 0.2s ease;
+  background-color: blue;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
-
-
 @media all and (max-width: 688px) {
-    body {
-        height: 100vh;
-        width: 100vw;
-    }
-    /* main {
-        width: 100%;
-    } */
-    .button-container {
-        width: 100%;
-    }
+  .lifebar__card-image {
+    height: 100%;
+    max-width: 100%;
+    margin-right: 2rem;
+    display: block;
+  }
+  .display-panel-info {
+    width: 45%;
+  }
 
-    .display-panel {
-        display: none;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-        position: absolute;
-        height: 15%;
-        background: linear-gradient(135deg,rgb(0, 0, 100), rgb(0, 0, 30))
-    }
-    .player-one {
-        top: 0;
-    }
-    
-    .player-two {
-        bottom: 0;
-    }
-    .display-panel-image {
-        height: 90%;
-        width: 45%;
-        margin-left: .2rem;
-    }
-    
-    .image {
-        height: 100%;
-        max-width: 100%;
-        
-        /* width: 80%; */
-        margin-top: 0rem;
-        margin-right: 2rem;
-        display: block;
-    }
-    .display-panel-info {
-        height: 100%;
-        width: 45%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: row;
-    }
-    
-    .display-panel-atkpoints {
-        font-size: 2rem;
-        font-weight: 400;
-        color: white;
-        border-radius: 6px;
-        margin-bottom: 0rem;
-    }
-    
-    .display-panel-lp {
-        width: 100%;
-        height: 100%;
-        margin-right: .3rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-    }
-    
-    .life-points {
-        color: white;
-        font-size: 2rem;
-        font-weight: 500;
-        margin-right: 0;
-    }
-    
-    .lp-avatar {
-        display: block;
-        height: 90%;
-        min-width: 40%;
-        margin: 0 auto;
-        object-fit: cover;
-        object-position: center;
-    }
-    .duel-moves {
-        max-height: 40rem;
-        max-width: 90%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin: 0 auto;
-        margin-bottom: 0rem;
-    }
+  .lifebar__atk-points {
+    font-size: 2rem;
+  }
 
-    #duelist1-monster {
-        max-width: 30%;
-        display: block;
-    }
-    
-    #duelist2-monster {
-        max-width: 30%;
-        display: block;
-    }
-    
-    #result1 {
-        color: rgb(0, 228, 197);
-        text-align: center;
-        font-size: 2.8rem;
-    }
-    
-    #result2 {
-        color: rgb(72, 52, 253);
-        font-size: 3rem;
-        margin-top: 0rem;
-    }
-    
-    #battleText {   
-        font-size: 2rem;
-        margin: 1rem;
-    }
-    #logo {
-        height: 15vh;
-        margin-top: 5rem;
-    }
-    .btn {
-        max-height: 10rem;
-        width: 3rem;
-        padding: 0rem 3rem;
-        border-radius: 10px;
-        border: 5px solid black;
-        box-shadow: 0.5px 0.5px 10px rgb(101, 149, 253);
-        color: goldenrod;
-        cursor: pointer;
-        margin: 1rem 2rem;
-        transition: all 0.2s ease;
-    }
-    .button-wrapper {
-        margin-top: 0rem;
-        margin-left: 0rem;
-        text-align: center;
-    }
-    
-    .button-title {
-        color: rgb(101, 149, 253);
-        text-shadow: .2rem .2rem rgba(255, 217, 0, 0.856);
-        font-size: 3rem;
-        margin-top: 0rem;
-        margin-right: 0rem;
-        margin-bottom: 3rem;
-        text-align: center;
-    }
-   
+  .life-points {
+    font-size: 2rem;
+    margin-right: 0;
+  }
+
+  .lp-avatar {
+    display: block;
+    height: 90%;
+    min-width: 40%;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .monster-card {
+    max-width: 30%;
+  }
+
+  .result-text {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  #battleText {
+    font-size: 3rem;
+  }
+  #logo {
+    height: 15vh;
+    margin-top: 5rem;
+  }
+  .btn {
+    height: 10rem;
+    width: 3rem;
+    margin: 1rem 2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .button-list {
+    margin-top: 0rem;
+    text-align: center;
+  }
+
+  .button-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
 }

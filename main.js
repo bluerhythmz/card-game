@@ -30,6 +30,14 @@ const field = {
     avatarElement: document.getElementById("duelist1-avatar"),
     battleResultElement: document.getElementById("result1"),
     lifePointsElement: document.getElementById("duelist1-lp"),
+    fillField(duelist) {
+      this.card.src = duelist.chosenCard.img
+      this.cardImage.src = duelist.chosenCard.img
+      this.attackPoints.innerHTML = `ATK: ${duelist.chosenCard.attackPoints}`
+      this.avatarElement.src = duelist.avatar
+      this.battleResultElement.innerHTML = ""
+      this.lifePointsElement.innerHTML = `${duelist.name}: ${duelist.lifePoints}`
+    }
   },
   playerTwoField: {
     card: document.getElementById("duelist2-monster"),
@@ -38,6 +46,14 @@ const field = {
     avatarElement: document.getElementById("duelist2-avatar"),
     battleResultElement: document.getElementById("result2"),
     lifePointsElement: document.getElementById("duelist2-lp"),
+    fillField(duelist) {
+      this.card.src = duelist.chosenCard.img
+      this.cardImage.src = duelist.chosenCard.img
+      this.attackPoints.innerHTML = `ATK: ${duelist.chosenCard.attackPoints}`
+      this.avatarElement.src = duelist.avatar
+      this.battleResultElement.innerHTML = ""
+      this.lifePointsElement.innerHTML = `${duelist.name}: ${duelist.lifePoints}`
+    }
   },
 };
 
@@ -55,19 +71,9 @@ function duelStart(duelist1, duelist2) {
   duelist1.chosenCard = duelist1.cards[Math.floor(Math.random() * 5)];
   duelist2.chosenCard = duelist2.cards[Math.floor(Math.random() * 5)];
   duelMoves.style.display = "flex";
-  field.playerOneField.cardImage.src = duelist1.chosenCard.img;
-  field.playerTwoField.cardImage.src = duelist2.chosenCard.img;
-  field.playerOneField.avatarElement.src = duelist1.avatar;
-  field.playerTwoField.avatarElement.src = duelist2.avatar;
-  field.playerOneField.attackPoints.innerHTML = `ATK: ${duelist1.chosenCard.attackPoints}`;
-  field.playerTwoField.attackPoints.innerHTML = `ATK: ${duelist2.chosenCard.attackPoints}`;
-  field.playerOneField.battleResultElement.innerHTML = "";
-  field.playerOneField.card.src = duelist1.chosenCard.img;
-  field.playerTwoField.card.src = duelist2.chosenCard.img;
+  field.playerOneField.fillField(duelist1)
+  field.playerTwoField.fillField(duelist2)
   battleText.innerHTML = "VS";
-  field.playerTwoField.battleResultElement.innerHTML = "";
-  field.playerOneField.lifePointsElement.innerHTML = `${duelist1.name}: ${duelist1.lifePoints}`;
-  field.playerTwoField.lifePointsElement.innerHTML = `${duelist2.name}: ${duelist2.lifePoints}`;
   setTimeout(() => {
     calculation(duelist1, duelist2);
   }, 1800);
